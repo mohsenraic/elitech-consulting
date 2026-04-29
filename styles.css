@@ -166,6 +166,10 @@ textarea {
   display: block;
 }
 
+.mobile-brand {
+  display: none;
+}
+
 .brand-text {
   position: relative;
   display: inline-flex;
@@ -1081,19 +1085,30 @@ html.js .reveal.visible,
     padding: 8px 10px;
   }
 
+  .header-logo-row {
+    display: none;
+  }
+
+  .mobile-brand {
+    display: inline-flex;
+    justify-self: start;
+  }
+
+  .mobile-brand .brand-logo {
+    width: 220px;
+    height: 58px;
+    filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.28));
+  }
+
   .desktop-nav,
   .header-cta {
     display: none;
   }
 
-  .header-logo-row {
-    height: 88px;
-  }
-
   .header-menu-row {
     grid-template-columns: 1fr auto;
-    min-height: 52px;
-    padding-top: 8px;
+    min-height: 60px;
+    padding: 8px 10px 6px;
   }
 
   .menu-button {
@@ -1143,19 +1158,19 @@ html.js .reveal.visible,
     padding: 6px 8px;
   }
 
-  .header-logo-row {
-    height: 76px;
-    padding-bottom: 8px;
-  }
-
   .header-menu-row {
-    min-height: 48px;
-    padding: 8px 4px 4px;
+    min-height: 56px;
+    padding: 8px 8px 6px;
   }
 
   .brand-logo {
     width: 240px;
     height: 62px;
+  }
+
+  .mobile-brand .brand-logo {
+    width: 100px;
+    height: 50px;
   }
 
   .brand {
