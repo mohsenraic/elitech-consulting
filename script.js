@@ -32,18 +32,22 @@ window.addEventListener(
     setHeaderState();
     setScrollProgress();
   },
-  { passive: true }
+  { passive: true },
 );
 
 menuButton?.addEventListener("click", () => {
-  document.body.classList.toggle("menu-open");
+  const isOpen = document.body.classList.toggle("menu-open");
   mobileNav?.classList.toggle("open");
+  menuButton.setAttribute("aria-expanded", isOpen);
+  mobileNav?.setAttribute("aria-hidden", !isOpen);
 });
 
 mobileNav?.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => {
     document.body.classList.remove("menu-open");
     mobileNav.classList.remove("open");
+    menuButton?.setAttribute("aria-expanded", "false");
+    mobileNav.setAttribute("aria-hidden", "true");
   });
 });
 
@@ -62,7 +66,7 @@ if (glow) {
       glow.style.left = `${event.clientX}px`;
       glow.style.top = `${event.clientY}px`;
     },
-    { passive: true }
+    { passive: true },
   );
 }
 
@@ -91,7 +95,7 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.16 }
+  { threshold: 0.16 },
 );
 
 revealItems.forEach((item) => observer.observe(item));
@@ -113,7 +117,7 @@ if (!reduceMotion.matches && parallaxItems.length) {
         item.style.transform = `translate3d(${x * strength}px, ${y * strength}px, 0)`;
       });
     },
-    { passive: true }
+    { passive: true },
   );
 }
 

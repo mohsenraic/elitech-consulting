@@ -1,17 +1,67 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Elitech Consulting | Web, Mobile, AI & Webmastering</title>
+    <title>ELITECH | Création de Sites Web, Applications Mobiles, Solutions IA & Webmastering</title>
     <meta
       name="description"
-      content="Elitech Consulting accompagne les entreprises dans la création de sites web, applications mobiles, webmastering et solutions IA."
+      content="ELITECH, agence digitale spécialisée en création de sites web, développement d'applications mobiles, intelligence artificielle et webmastering. Accompagnement sur-mesure pour PME et entreprises ambitieuses."
     />
-    <link
-      rel="icon"
-      href="assets/elitech-logo-cropped.png"
-    />
+    <meta name="keywords" content="création site web, développement application mobile, intelligence artificielle, webmastering, agence digitale, PME, consulting digital, refonte site internet, maintenance web, automatisation IA" />
+    <meta name="author" content="ELITECH" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="canonical" href="https://weareelitech.com/" />
+    <meta name="theme-color" content="#111a29" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="ELITECH" />
+    <meta property="og:title" content="ELITECH | Agence Digitale – Sites Web, Apps, IA & Webmastering" />
+    <meta property="og:description" content="Agence digitale spécialisée en création de sites web performants, applications mobiles, solutions IA et maintenance. Accompagnement direct par les fondateurs." />
+    <meta property="og:url" content="https://weareelitech.com/" />
+    <meta property="og:image" content="https://weareelitech.com/assets/elitech-logo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="ELITECH – Agence digitale pour PME ambitieuses" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ELITECH | Agence Digitale – Sites Web, Apps, IA & Webmastering" />
+    <meta name="twitter:description" content="Création de sites web, applications mobiles, solutions IA et webmastering. Accompagnement sur-mesure pour entreprises ambitieuses." />
+    <meta name="twitter:image" content="https://weareelitech.com/assets/elitech-logo.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "ELITECH",
+      "description": "Agence digitale spécialisée en création de sites web, développement d'applications mobiles, intelligence artificielle et webmastering pour PME et entreprises.",
+      "url": "https://weareelitech.com",
+      "logo": "https://weareelitech.com/assets/elitech-logo.png",
+      "email": "contact@weareelitech.com",
+      "areaServed": { "@type": "Country", "name": "France" },
+      "serviceType": ["Création de sites web", "Développement d'applications mobiles", "Solutions d'intelligence artificielle", "Webmastering et maintenance"],
+      "priceRange": "$$"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://weareelitech.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://weareelitech.com/#services" },
+        { "@type": "ListItem", "position": 3, "name": "Méthode", "item": "https://weareelitech.com/#methode" },
+        { "@type": "ListItem", "position": 4, "name": "Contact", "item": "https://weareelitech.com/#contact" }
+      ]
+    }
+    </script>
+
+    <link rel="icon" href="assets/elitech-logo-cropped.png" />
+    <link rel="apple-touch-icon" href="assets/elitech-logo-cropped.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,133 +71,142 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Aller au contenu principal</a>
     <div class="cursor-glow" aria-hidden="true"></div>
-    <div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
+    <div class="scroll-progress" data-scroll-progress aria-hidden="true" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
 
-    <header class="site-header" data-header>
-      <a class="brand" href="#accueil" aria-label="Elitech Consulting">
-        <span class="brand-text">Elitech Consulting</span>
-      </a>
-      <nav class="desktop-nav" aria-label="Navigation principale">
-        <a href="#services">Services</a>
-        <a href="#methode">Méthode</a>
-        <a href="#preuves">Confiance</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <a class="header-cta" href="#contact">Démarrer</a>
-      <button class="menu-button" type="button" aria-label="Ouvrir le menu" data-menu-button>
-        <span></span>
-        <span></span>
-      </button>
+    <header class="site-header" data-header role="banner">
+      <div class="header-logo-row">
+        <a class="brand" href="#accueil" aria-label="ELITECH – Retour à l'accueil">
+          <img class="brand-logo" src="assets/elitech-logo-white.png" alt="Logo ELITECH" width="400" height="100" />
+        </a>
+      </div>
+      <div class="header-menu-row">
+        <nav class="desktop-nav" aria-label="Navigation principale">
+          <a href="#services">Services</a>
+          <a href="#methode">Méthode</a>
+          <a href="#preuves">Confiance</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a class="header-cta" href="#contact" role="button">Démarrer un projet</a>
+        <button class="menu-button" type="button" aria-label="Ouvrir le menu de navigation" aria-expanded="false" data-menu-button>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </header>
 
-    <nav class="mobile-nav" aria-label="Navigation mobile" data-mobile-nav>
+    <nav class="mobile-nav" aria-label="Navigation mobile" data-mobile-nav aria-hidden="true">
       <a href="#services">Services</a>
       <a href="#methode">Méthode</a>
       <a href="#preuves">Confiance</a>
       <a href="#contact">Contact</a>
     </nav>
 
-    <main>
-      <section class="hero section" id="accueil">
+    <main id="main-content">
+      <section class="hero section" id="accueil" aria-label="Présentation ELITECH">
         <canvas class="network-canvas" data-network aria-hidden="true"></canvas>
-        <img class="hero-image" src="assets/hero-tech.png" alt="" aria-hidden="true" />
+        <img class="hero-image" src="assets/hero-tech.png" alt="Environnement digital moderne illustrant le développement web, mobile et IA" loading="eager" fetchpriority="high" />
         <div class="hero-overlay" aria-hidden="true"></div>
         <div class="hero-content reveal visible">
-          <p class="eyebrow">Digital studio pour PME ambitieuses</p>
-          <h1>Des sites, apps et solutions IA qui inspirent confiance.</h1>
+          <p class="eyebrow">Agence digitale pour PME & entreprises ambitieuses</p>
+          <h1>Sites web, applications et solutions IA qui génèrent des résultats.</h1>
           <p class="hero-copy">
-            Elitech Consulting conçoit des expériences web, mobile et digitales rapides,
-            élégantes et solides, avec un accompagnement direct par les fondateurs.
+            ELITECH conçoit des expériences digitales performantes — sites web,
+            applications mobiles et outils IA — alliant design premium, rapidité et fiabilité technique.
+            Un accompagnement direct par les fondateurs, de la stratégie au déploiement.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#contact">Parler de votre projet</a>
-            <a class="button secondary" href="#services">Voir nos expertises</a>
+            <a class="button primary" href="#contact">Discuter de votre projet</a>
+            <a class="button secondary" href="#services">Découvrir nos expertises</a>
           </div>
-          <div class="hero-metrics" aria-label="Points forts">
+          <div class="hero-metrics" aria-label="Nos engagements clés">
             <span><strong data-count="2">0</strong> fondateurs impliqués</span>
-            <span><strong data-count="360">0</strong> web, app, mobile, IA</span>
-            <span><strong data-count="1">0</strong> interlocuteur clair</span>
+            <span><strong data-count="360">0</strong>° d'expertise digitale</span>
+            <span><strong data-count="1">0</strong> interlocuteur dédié</span>
           </div>
         </div>
-        <div class="hero-proof reveal visible" data-parallax>
+        <aside class="hero-proof reveal visible" data-parallax aria-label="Stack technologique">
           <div class="proof-orbit" aria-hidden="true"></div>
-          <p>Stack digital</p>
-          <strong>Web + Mobile + AI</strong>
-          <span>Design, développement, maintenance et automatisation dans un même accompagnement.</span>
-        </div>
+          <p>Expertise complète</p>
+          <strong>Web + Mobile + IA</strong>
+          <span>Design, développement, maintenance et automatisation réunis dans un seul accompagnement.</span>
+        </aside>
       </section>
 
-      <section class="section intro-band reveal">
-        <div class="section-kicker">Pourquoi Elitech</div>
+      <section class="section intro-band reveal" aria-label="Pourquoi choisir ELITECH">
+        <div class="section-kicker">Pourquoi ELITECH</div>
         <div class="intro-grid">
-          <h2>Une petite équipe, un niveau d'exigence très élevé.</h2>
+          <h2>Une équipe resserrée, un niveau d'exigence exceptionnel.</h2>
           <p>
-            Vous travaillez avec deux personnes qui comprennent à la fois la technique,
-            l'image de marque et la réalité business. Pas de lourdeur, pas de promesses
-            floues: des choix propres, des livrables soignés, et une relation transparente.
+            Vous collaborez directement avec deux experts qui maîtrisent la technique,
+            le design et la stratégie business. Pas de lourdeur administrative, pas de promesses vagues :
+            des choix éclairés, des livrables soignés et une relation de travail transparente du début à la fin.
           </p>
         </div>
       </section>
 
-      <section class="client-strip" aria-label="Références clients">
+      <section class="client-strip" aria-label="Entreprises qui nous ont fait confiance">
         <p>Ils nous ont fait confiance</p>
         <div class="client-marquee">
           <div class="client-track">
-            <span><img src="https://logo.clearbit.com/e.leclerc" alt="E-Leclerc" /><em>E-Leclerc</em></span>
-            <span><img src="https://logo.clearbit.com/saur.com" alt="SAUR" /><em>SAUR</em></span>
-            <span><img src="https://logo.clearbit.com/cgi.com" alt="CGI" /><em>CGI</em></span>
-            <span><img src="https://logo.clearbit.com/altares.com" alt="Altares France" /><em>Altares France</em></span>
-            <span><img src="https://logo.clearbit.com/unilever.com" alt="Unilever" /><em>Unilever</em></span>
-            <span><img src="https://logo.clearbit.com/inova-cfecgc.fr" alt="INOVA CFE-CGC" /><em>INOVA CFE-CGC</em></span>
-            <span><img src="https://logo.clearbit.com/fret.sncf.com" alt="SNCF Fret" /><em>SNCF Fret</em></span>
-            <span><img src="https://logo.clearbit.com/iqera.com" alt="iQera" /><em>iQera</em></span>
-            <span><img src="https://logo.clearbit.com/e.leclerc" alt="E-Leclerc" /><em>E-Leclerc</em></span>
-            <span><img src="https://logo.clearbit.com/saur.com" alt="SAUR" /><em>SAUR</em></span>
-            <span><img src="https://logo.clearbit.com/cgi.com" alt="CGI" /><em>CGI</em></span>
-            <span><img src="https://logo.clearbit.com/altares.com" alt="Altares France" /><em>Altares France</em></span>
-            <span><img src="https://logo.clearbit.com/unilever.com" alt="Unilever" /><em>Unilever</em></span>
-            <span><img src="https://logo.clearbit.com/inova-cfecgc.fr" alt="INOVA CFE-CGC" /><em>INOVA CFE-CGC</em></span>
-            <span><img src="https://logo.clearbit.com/fret.sncf.com" alt="SNCF Fret" /><em>SNCF Fret</em></span>
-            <span><img src="https://logo.clearbit.com/iqera.com" alt="iQera" /><em>iQera</em></span>
+            <span><img src="assets/clients/E.Leclerc_logo.svg.png" alt="E-Leclerc" loading="lazy" /><em>E-Leclerc</em></span>
+            <span><img src="assets/clients/Logo_Saur_(2022).svg.png" alt="SAUR" loading="lazy" /><em>SAUR</em></span>
+            <span><img src="assets/clients/CGI_logo.svg.png" alt="CGI" loading="lazy" /><em>CGI</em></span>
+            <span><img src="assets/clients/Logo-altares-positif-250-2.png" alt="Altares France" loading="lazy" /><em>Altares France</em></span>
+            <span><img src="assets/clients/unilever-3.svg" alt="Unilever" loading="lazy" /><em>Unilever</em></span>
+            <span><img src="assets/clients/logo-cfecgc-inova-dark.svg" alt="INOVA CFE-CGC" loading="lazy" /><em>INOVA CFE-CGC</em></span>
+            <span><img src="assets/clients/Fret_SNCF_2023.png" alt="SNCF Fret" loading="lazy" /><em>SNCF Fret</em></span>
+            <span><img src="assets/clients/iqera-italia-logo.png" alt="iQera" loading="lazy" /><em>iQera</em></span>
+            <span><img src="assets/clients/Neem_Logo_600.webp" alt="Neem" loading="lazy" /><em>Neem</em></span>
+            <span><img src="assets/clients/E.Leclerc_logo.svg.png" alt="E-Leclerc" loading="lazy" /><em>E-Leclerc</em></span>
+            <span><img src="assets/clients/Logo_Saur_(2022).svg.png" alt="SAUR" loading="lazy" /><em>SAUR</em></span>
+            <span><img src="assets/clients/CGI_logo.svg.png" alt="CGI" loading="lazy" /><em>CGI</em></span>
+            <span><img src="assets/clients/Logo-altares-positif-250-2.png" alt="Altares France" loading="lazy" /><em>Altares France</em></span>
+            <span><img src="assets/clients/unilever-3.svg" alt="Unilever" loading="lazy" /><em>Unilever</em></span>
+            <span><img src="assets/clients/logo-cfecgc-inova-dark.svg" alt="INOVA CFE-CGC" loading="lazy" /><em>INOVA CFE-CGC</em></span>
+            <span><img src="assets/clients/Fret_SNCF_2023.png" alt="SNCF Fret" loading="lazy" /><em>SNCF Fret</em></span>
+            <span><img src="assets/clients/iqera-italia-logo.png" alt="iQera" loading="lazy" /><em>iQera</em></span>
+            <span><img src="assets/clients/Neem_Logo_600.webp" alt="Neem" loading="lazy" /><em>Neem</em></span>
+
           </div>
         </div>
       </section>
 
-      <section class="section showcase" aria-label="Réalisations et univers techniques">
+      <section class="section showcase" aria-label="Nos réalisations et savoir-faire digital">
         <div class="section-heading reveal">
-          <p class="section-kicker">Univers projet</p>
-          <h2>Une image premium pour chaque point de contact digital.</h2>
+          <p class="section-kicker">Nos réalisations</p>
+          <h2>Un rendu premium pour chaque point de contact digital.</h2>
         </div>
         <div class="photo-grid">
           <article class="photo-card large reveal" data-parallax>
-            <img src="assets/photo-web-app.png" alt="Interface web et application mobile dans un environnement tech premium" />
+            <img src="assets/photo-web-app.png" alt="Interface web responsive et application mobile au design premium" loading="lazy" width="800" height="600" />
             <div>
-              <span>Web & app</span>
-              <h3>Des expériences rapides, élégantes et pensées conversion.</h3>
+              <span>Sites web & applications</span>
+              <h3>Des expériences rapides, élégantes et optimisées pour la conversion.</h3>
             </div>
           </article>
           <article class="photo-card reveal" data-parallax>
-            <img src="assets/photo-ai.png" alt="Visualisation IA et automatisation sur tablette" />
+            <img src="assets/photo-ai.png" alt="Dashboard d'intelligence artificielle et automatisation de processus" loading="lazy" width="600" height="400" />
             <div>
-              <span>IA utile</span>
-              <h3>Automatiser ce qui ralentit vos équipes.</h3>
+              <span>Intelligence artificielle</span>
+              <h3>Automatiser les tâches chronophages pour libérer vos équipes.</h3>
             </div>
           </article>
           <article class="photo-card reveal" data-parallax>
-            <img src="assets/photo-monitoring.png" alt="Tableaux de bord de monitoring et performance digitale" />
+            <img src="assets/photo-monitoring.png" alt="Tableaux de bord de monitoring, sécurité et performance web" loading="lazy" width="600" height="400" />
             <div>
-              <span>Maintenance</span>
-              <h3>Surveiller, sécuriser et améliorer en continu.</h3>
+              <span>Maintenance & monitoring</span>
+              <h3>Surveiller, sécuriser et optimiser en continu votre présence en ligne.</h3>
             </div>
           </article>
         </div>
       </section>
 
-      <section class="section services" id="services">
+      <section class="section services" id="services" aria-label="Nos services et expertises digitales">
         <div class="section-heading reveal">
-          <p class="section-kicker">Expertises</p>
-          <h2>Tout ce qu'il faut pour lancer, moderniser et faire vivre votre présence digitale.</h2>
+          <p class="section-kicker">Nos expertises</p>
+          <h2>Tout ce qu'il faut pour créer, moderniser et pérenniser votre présence digitale.</h2>
         </div>
         <div class="service-grid">
           <article class="service-card reveal">
@@ -155,117 +214,144 @@
               <svg viewBox="0 0 24 24"><path d="M4 5h16v10H4z"></path><path d="M9 19h6"></path><path d="M12 15v4"></path></svg>
             </span>
             <h3>Sites web vitrine & corporate</h3>
-            <p>Interfaces modernes, rapides, responsives et pensées pour convertir les visiteurs en contacts qualifiés.</p>
+            <p>Interfaces modernes, rapides et responsives, conçues pour convertir vos visiteurs en prospects qualifiés et renforcer votre crédibilité.</p>
           </article>
           <article class="service-card reveal">
             <span class="icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"></rect><path d="M11 18h2"></path></svg>
             </span>
             <h3>Applications web & mobile</h3>
-            <p>Applications métier, portails clients, dashboards et expériences mobiles avec une base technique durable.</p>
+            <p>Applications métier, portails clients et dashboards sur-mesure, bâtis sur une architecture technique robuste et évolutive.</p>
           </article>
           <article class="service-card reveal">
             <span class="icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M12 3v18"></path><path d="M4 8h16"></path><path d="M6 16h12"></path><circle cx="12" cy="12" r="3"></circle></svg>
             </span>
-            <h3>Solutions IA utiles</h3>
-            <p>Automatisation, assistants internes, analyse de documents et intégrations IA orientées gain de temps réel.</p>
+            <h3>Solutions d'intelligence artificielle</h3>
+            <p>Automatisation des processus, assistants internes, analyse documentaire et intégrations IA pour un gain de productivité mesurable.</p>
           </article>
           <article class="service-card reveal">
             <span class="icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="M12 5v14"></path><circle cx="12" cy="12" r="8"></circle></svg>
             </span>
             <h3>Webmastering & maintenance</h3>
-            <p>Mises à jour, sécurité, contenu, performance et suivi technique pour garder votre site propre et fiable.</p>
+            <p>Mises à jour régulières, sécurité renforcée, gestion de contenu et optimisation des performances pour un site toujours fiable.</p>
           </article>
         </div>
       </section>
 
-      <section class="section process" id="methode">
+      <section class="section process" id="methode" aria-label="Notre méthodologie de travail">
         <div class="section-heading reveal">
-          <p class="section-kicker">Méthode</p>
-          <h2>Une progression claire, du cadrage à la mise en ligne.</h2>
+          <p class="section-kicker">Notre méthode</p>
+          <h2>Une démarche structurée, du cadrage stratégique à la mise en production.</h2>
         </div>
-        <div class="timeline">
-          <article class="step reveal">
-            <span>01</span>
-            <h3>Cadrage</h3>
-            <p>Objectifs, cible, messages, contraintes techniques et priorités business.</p>
-          </article>
-          <article class="step reveal">
-            <span>02</span>
-            <h3>Design & prototype</h3>
-            <p>Une direction visuelle élégante, lisible et adaptée à votre marché.</p>
-          </article>
-          <article class="step reveal">
-            <span>03</span>
-            <h3>Développement</h3>
-            <p>Un build propre, responsive, rapide et préparé pour évoluer.</p>
-          </article>
-          <article class="step reveal">
-            <span>04</span>
-            <h3>Lancement & suivi</h3>
-            <p>Recette, mise en ligne, mesure, maintenance et améliorations continues.</p>
-          </article>
-        </div>
+        <ol class="timeline" role="list">
+          <li class="step reveal">
+            <span aria-hidden="true">01</span>
+            <h3>Cadrage stratégique</h3>
+            <p>Analyse des objectifs, identification de la cible, définition des messages clés et priorisation des enjeux business.</p>
+          </li>
+          <li class="step reveal">
+            <span aria-hidden="true">02</span>
+            <h3>Design & prototypage</h3>
+            <p>Direction artistique élégante, maquettes interactives et validation visuelle avant le moindre développement.</p>
+          </li>
+          <li class="step reveal">
+            <span aria-hidden="true">03</span>
+            <h3>Développement sur-mesure</h3>
+            <p>Code propre, responsive, performant et architecturé pour évoluer avec votre activité.</p>
+          </li>
+          <li class="step reveal">
+            <span aria-hidden="true">04</span>
+            <h3>Lancement & accompagnement</h3>
+            <p>Tests rigoureux, mise en production, suivi analytique et améliorations continues post-lancement.</p>
+          </li>
+        </ol>
       </section>
 
-      <section class="section trust" id="preuves">
+      <section class="section trust" id="preuves" aria-label="Nos engagements de confiance">
         <div class="trust-panel reveal">
           <div>
-            <p class="section-kicker">Confiance</p>
-            <h2>Une relation directe avec ceux qui font le travail.</h2>
+            <p class="section-kicker">Engagements</p>
+            <h2>Une relation directe avec ceux qui conçoivent et réalisent votre projet.</h2>
           </div>
           <div class="trust-list">
-            <p><strong>Transparence.</strong> Devis compréhensible, périmètre clair, et communication simple.</p>
-            <p><strong>Qualité.</strong> Attention au design, à la performance, au SEO technique et à la fiabilité.</p>
-            <p><strong>Agilité.</strong> Une équipe courte, réactive, capable d'avancer vite sans perdre le détail.</p>
+            <p><strong>Transparence totale.</strong> Devis détaillé et compréhensible, périmètre clairement défini et communication fluide à chaque étape.</p>
+            <p><strong>Exigence qualité.</strong> Attention minutieuse au design, aux performances, au SEO technique et à la fiabilité de chaque livrable.</p>
+            <p><strong>Agilité & réactivité.</strong> Une équipe restreinte capable d'avancer rapidement sans jamais sacrifier la qualité des détails.</p>
           </div>
         </div>
       </section>
 
-      <section class="section contact" id="contact">
+      <section class="section contact" id="contact" aria-label="Formulaire de contact">
         <div class="contact-copy reveal">
-          <p class="section-kicker">Contact</p>
-          <h2>Parlons de votre prochain levier digital.</h2>
+          <p class="section-kicker">Contactez-nous</p>
+          <h2>Parlons de votre prochain projet digital.</h2>
           <p>
-            Décrivez votre besoin: site vitrine, application, refonte, maintenance,
-            automatisation IA ou simple audit. Elitech Consulting vous répond avec une
-            recommandation concrète.
+            Décrivez votre besoin — site vitrine, application sur-mesure, refonte complète,
+            maintenance continue, automatisation IA ou audit technique.
+            ELITECH vous répond sous 24h avec une recommandation personnalisée.
           </p>
+          <address class="contact-info">
+            <a href="mailto:contact@weareelitech.com" class="contact-link">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="none" stroke="currentColor" stroke-width="1.8"/><polyline points="22,6 12,13 2,6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+              contact@weareelitech.com
+            </a>
+          </address>
         </div>
-        <form class="contact-form reveal" action="mailto:contact@elitech-consulting.com" method="post" enctype="text/plain">
+        <form class="contact-form reveal" action="mailto:contact@weareelitech.com" method="post" enctype="text/plain" aria-label="Formulaire de demande de projet">
           <label>
-            Nom
-            <input type="text" name="nom" placeholder="Votre nom" required />
+            Nom complet
+            <input type="text" name="nom" placeholder="Votre nom et prénom" required autocomplete="name" />
           </label>
           <label>
-            Email
-            <input type="email" name="email" placeholder="vous@entreprise.com" required />
+            Adresse email
+            <input type="email" name="email" placeholder="vous@entreprise.com" required autocomplete="email" />
           </label>
           <label>
-            Projet
+            Type de projet
             <select name="projet" required>
-              <option value="">Sélectionner un besoin</option>
-              <option>Site web</option>
-              <option>Application web ou mobile</option>
-              <option>Webmastering</option>
-              <option>Solution IA</option>
-              <option>Autre</option>
+              <option value="">Sélectionner votre besoin</option>
+              <option value="site-web">Création de site web</option>
+              <option value="application">Application web ou mobile</option>
+              <option value="webmastering">Webmastering & maintenance</option>
+              <option value="ia">Solution d'intelligence artificielle</option>
+              <option value="refonte">Refonte de site existant</option>
+              <option value="audit">Audit technique & SEO</option>
+              <option value="autre">Autre demande</option>
             </select>
           </label>
           <label>
-            Message
-            <textarea name="message" rows="5" placeholder="Quelques lignes sur votre objectif"></textarea>
+            Votre message
+            <textarea name="message" rows="5" placeholder="Décrivez brièvement votre projet et vos objectifs"></textarea>
           </label>
-          <button class="button primary form-button" type="submit">Envoyer la demande</button>
+          <button class="button primary form-button" type="submit">Envoyer ma demande</button>
         </form>
       </section>
     </main>
 
-    <footer class="footer">
-      <img class="footer-logo" src="assets/elitech-logo-cropped.png" alt="Elitech Consulting" />
-      <p>Web, app, mobile, webmastering & IA</p>
+    <footer class="footer" role="contentinfo">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img class="footer-logo" src="assets/elitech-logo-white.png" alt="Logo ELITECH" width="220" height="56" loading="lazy" />
+          <p>Agence digitale spécialisée en création de sites web, applications mobiles, IA et webmastering.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Navigation pied de page">
+          <h4>Navigation</h4>
+          <a href="#accueil">Accueil</a>
+          <a href="#services">Services</a>
+          <a href="#methode">Méthode</a>
+          <a href="#preuves">Confiance</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="footer-contact-info">
+          <h4>Contact</h4>
+          <a href="mailto:contact@weareelitech.com">contact@weareelitech.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 ELITECH. Tous droits réservés.</p>
+      </div>
     </footer>
 
     <script src="script.js"></script>
