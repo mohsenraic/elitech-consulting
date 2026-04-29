@@ -189,3 +189,145 @@ if (canvas && ctx) {
   drawNetwork();
   window.addEventListener("resize", resizeCanvas);
 }
+
+const multiStepForm = document.querySelector("[data-multi-step-form]");
+
+if (multiStepForm) {
+  const steps = Array.from(multiStepForm.querySelectorAll("[data-form-step]"));
+  const prevButton = multiStepForm.querySelector("[data-step-prev]");
+  const nextButton = multiStepForm.querySelector("[data-step-next]");
+  const submitButton = multiStepForm.querySelector("[data-step-submit]");
+  const currentStepText = multiStepForm.querySelector("[data-current-step]");
+  const progressBar = multiStepForm.querySelector("[data-progress-bar]");
+  const statusMessage = multiStepForm.querySelector("[data-form-status]");
+  let currentStep = 0;
+
+  const updateFormStep = () => {
+    const total = steps.length;
+
+    steps.forEach((step, index) => {
+      const isActive = index === currentStep;
+      step.hidden = !isActive;
+      step.classList.toggle("active", isActive);
+    });
+
+    if (currentStepText) {
+      currentStepText.textContent = String(currentStep + 1);
+    }
+
+    if (progressBar) {
+      const progress = ((currentStep + 1) / total) * 100;
+      progressBar.style.width = `${progress}%`;
+    }
+
+    if (prevButton) {
+      prevButton.hidden = currentStep === 0;
+    }
+
+    if (nextButton) {
+      nextButton.hidden = currentStep === total - 1;
+    }
+
+    if (submitButton) {
+      submitButton.hidden = currentStep !== total - 1;
+    }
+  };
+
+  const validateCurrentStep = () => {
+    const activeFields =
+      steps[currentStep]?.querySelectorAll("input, select, textarea") || [];
+
+    for (const field of activeFields) {
+      if (!field.checkValidity()) {
+        field.reportValidity();
+        return false;
+      }
+    }
+
+    return true;
+  };
+
+  nextButton?.addEventListener("click", () => {
+    if (!validateCurrentStep()) return;
+    currentStep = Math.min(currentStep + 1, steps.length - 1);
+    updateFormStep();
+  });
+
+  prevButton?.addEventListener("click", () => {
+    currentStep = Math.max(currentStep - 1, 0);
+    updateFormStep();
+  });
+
+  multiStepForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (!validateCurrentStep()) return;
+
+    if (window.location.protocol === "file:") {
+      if (statusMessage) {
+        statusMessage.textContent =
+          "FormSubmit ne fonctionne pas en ouvrant le fichier HTML directement. Ouvrez le site via un serveur local (ex: Live Server), puis réessayez.";
+        statusMessage.classList.remove("success");
+        statusMessage.classList.add("error");
+      }
+      return;
+    }
+
+    if (statusMessage) {
+      statusMessage.textContent = "Envoi en cours...";
+      statusMessage.classList.remove("success", "error");
+    }
+
+    if (submitButton) {
+      submitButton.disabled = true;
+    }
+
+    try {
+      const formData = new FormData(multiStepForm);
+      const response = await fetch(multiStepForm.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      const result = await response.json().catch(() => null);
+
+      if (
+        !response.ok ||
+        result?.success === "false" ||
+        result?.success === false
+      ) {
+        throw new Error(result?.message || "Form submission failed");
+      }
+
+      if (statusMessage) {
+        statusMessage.textContent =
+          "Merci. Votre demande a été envoyée avec succès. Nous revenons vers vous rapidement.";
+        statusMessage.classList.remove("error");
+        statusMessage.classList.add("success");
+      }
+
+      multiStepForm.reset();
+      currentStep = 0;
+      updateFormStep();
+    } catch (error) {
+      const errorText = error instanceof Error ? error.message : "";
+
+      if (statusMessage) {
+        statusMessage.textContent = /web server/i.test(errorText)
+          ? "FormSubmit nécessite un serveur web. Ouvrez le site via un serveur local (pas en file://), puis réessayez."
+          : "Une erreur est survenue pendant l'envoi. Merci de réessayer ou d'écrire à contact@weareelitech.com.";
+        statusMessage.classList.remove("success");
+        statusMessage.classList.add("error");
+      }
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+      }
+    }
+  });
+
+  updateFormStep();
+}

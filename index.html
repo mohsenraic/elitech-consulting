@@ -288,9 +288,10 @@
           <p class="section-kicker">Contactez-nous</p>
           <h2>Parlons de votre prochain projet digital.</h2>
           <p>
-            Décrivez votre besoin — site vitrine, application sur-mesure, refonte complète,
-            maintenance continue, automatisation IA ou audit technique.
-            ELITECH vous répond sous 24h avec une recommandation personnalisée.
+            Remplissez ce formulaire guidé en 3 étapes :
+            d'abord les informations sur votre projet, ensuite vos besoins précis,
+            puis vos coordonnées de contact.
+            Dès l'envoi, nous recevons automatiquement votre demande par email.
           </p>
           <address class="contact-info">
             <a href="mailto:contact@weareelitech.com" class="contact-link">
@@ -299,33 +300,105 @@
             </a>
           </address>
         </div>
-        <form class="contact-form reveal" action="mailto:contact@weareelitech.com" method="post" enctype="text/plain" aria-label="Formulaire de demande de projet">
-          <label>
-            Nom complet
-            <input type="text" name="nom" placeholder="Votre nom et prénom" required autocomplete="name" />
-          </label>
-          <label>
-            Adresse email
-            <input type="email" name="email" placeholder="vous@entreprise.com" required autocomplete="email" />
-          </label>
-          <label>
-            Type de projet
-            <select name="projet" required>
-              <option value="">Sélectionner votre besoin</option>
-              <option value="site-web">Création de site web</option>
-              <option value="application">Application web ou mobile</option>
-              <option value="webmastering">Webmastering & maintenance</option>
-              <option value="ia">Solution d'intelligence artificielle</option>
-              <option value="refonte">Refonte de site existant</option>
-              <option value="audit">Audit technique & SEO</option>
-              <option value="autre">Autre demande</option>
-            </select>
-          </label>
-          <label>
-            Votre message
-            <textarea name="message" rows="5" placeholder="Décrivez brièvement votre projet et vos objectifs"></textarea>
-          </label>
-          <button class="button primary form-button" type="submit">Envoyer ma demande</button>
+        <form class="contact-form reveal" action="https://formsubmit.co/ajax/contact@weareelitech.com" method="post" aria-label="Formulaire de demande de projet" data-multi-step-form>
+          <input type="hidden" name="_subject" value="Nouveau projet depuis weareelitech.com" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hidden-field" aria-hidden="true" />
+
+          <div class="form-progress" aria-hidden="true">
+            <div class="form-progress-top">
+              <span>Formulaire projet</span>
+              <span>Étape <strong data-current-step>1</strong>/3</span>
+            </div>
+            <div class="form-progress-track">
+              <span data-progress-bar></span>
+            </div>
+          </div>
+
+          <div class="form-step active" data-form-step="1">
+            <label>
+              Type de projet
+              <select name="type_projet" required>
+                <option value="">Sélectionner votre besoin</option>
+                <option value="site-web">Création de site web</option>
+                <option value="application">Application web ou mobile</option>
+                <option value="webmastering">Webmastering & maintenance</option>
+                <option value="ia">Solution d'intelligence artificielle</option>
+                <option value="refonte">Refonte de site existant</option>
+                <option value="audit">Audit technique & SEO</option>
+                <option value="autre">Autre demande</option>
+              </select>
+            </label>
+            <label>
+              Budget estimatif
+              <select name="budget" required>
+                <option value="">Choisir une tranche</option>
+                <option value="moins-5000">Moins de 5 000€</option>
+                <option value="5000-15000">5 000€ à 15 000€</option>
+                <option value="15000-40000">15 000€ à 40 000€</option>
+                <option value="plus-40000">Plus de 40 000€</option>
+                <option value="a-definir">À définir ensemble</option>
+              </select>
+            </label>
+            <label>
+              Délai souhaité
+              <select name="delai" required>
+                <option value="">Sélectionner un délai</option>
+                <option value="urgent">Urgent (moins de 1 mois)</option>
+                <option value="1-3-mois">1 à 3 mois</option>
+                <option value="3-6-mois">3 à 6 mois</option>
+                <option value="6-plus">Plus de 6 mois</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="form-step" data-form-step="2" hidden>
+            <label>
+              Objectif principal
+              <select name="objectif" required>
+                <option value="">Sélectionner un objectif</option>
+                <option value="generer-leads">Générer plus de prospects</option>
+                <option value="vendre">Vendre en ligne</option>
+                <option value="automatiser">Automatiser des tâches</option>
+                <option value="moderniser">Moderniser l'image de marque</option>
+                <option value="optimiser">Améliorer la performance technique</option>
+              </select>
+            </label>
+            <label>
+              Fonctionnalités attendues
+              <textarea name="fonctionnalites" rows="4" placeholder="Ex: espace client, réservation, paiement, dashboard, chatbot IA..." required></textarea>
+            </label>
+            <label>
+              Détails du projet
+              <textarea name="message" rows="5" placeholder="Décrivez votre contexte, vos contraintes et ce que vous attendez d'ELITECH." required></textarea>
+            </label>
+          </div>
+
+          <div class="form-step" data-form-step="3" hidden>
+            <label>
+              Nom complet
+              <input type="text" name="nom" placeholder="Votre nom et prénom" required autocomplete="name" />
+            </label>
+            <label>
+              Société
+              <input type="text" name="societe" placeholder="Nom de votre entreprise" autocomplete="organization" />
+            </label>
+            <label>
+              Adresse email
+              <input type="email" name="email" placeholder="vous@entreprise.com" required autocomplete="email" />
+            </label>
+            <label>
+              Téléphone
+              <input type="tel" name="telephone" placeholder="+33 6 00 00 00 00" autocomplete="tel" />
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <button class="button secondary form-button" type="button" data-step-prev hidden>Précédent</button>
+            <button class="button primary form-button" type="button" data-step-next>Suivant</button>
+            <button class="button primary form-button" type="submit" data-step-submit hidden>Envoyer ma demande</button>
+          </div>
+          <p class="form-status" data-form-status aria-live="polite"></p>
         </form>
       </section>
     </main>

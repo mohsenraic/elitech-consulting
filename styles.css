@@ -803,6 +803,63 @@ ol.timeline {
   border-radius: 8px;
 }
 
+.hidden-field {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.form-progress {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 2px;
+}
+
+.form-progress-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.form-progress-track {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background: rgba(43, 61, 89, 0.12);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.form-progress-track span {
+  display: block;
+  width: 33.33%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--brand-blue), var(--brand-sky));
+  border-radius: inherit;
+  transition: width 200ms ease;
+}
+
+.form-step {
+  display: none;
+  gap: 16px;
+}
+
+.form-step.active {
+  display: grid;
+}
+
+.contact-form [hidden] {
+  display: none !important;
+}
+
 label {
   display: grid;
   gap: 8px;
@@ -833,6 +890,50 @@ textarea:focus {
 
 textarea {
   resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.form-actions .form-button {
+  min-width: 140px;
+}
+
+.contact-form .button.secondary {
+  color: var(--brand-deep);
+  background: rgba(17, 26, 41, 0.08);
+  border: 1px solid rgba(17, 26, 41, 0.2);
+}
+
+.contact-form .button.secondary:hover {
+  color: var(--white);
+  background: var(--brand-deep);
+  border-color: var(--brand-deep);
+}
+
+.form-button[disabled] {
+  opacity: 0.75;
+  cursor: wait;
+}
+
+.form-status {
+  min-height: 24px;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.form-status.success {
+  color: #0b8a4a;
+}
+
+.form-status.error {
+  color: #c23939;
 }
 
 .contact-info {
@@ -1125,6 +1226,15 @@ html.js .reveal.visible,
   .trust-panel,
   .contact-form {
     padding: 24px;
+  }
+
+  .form-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions .form-button {
+    width: 100%;
   }
 
   .footer {
