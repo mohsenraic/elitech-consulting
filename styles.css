@@ -1381,6 +1381,23 @@ textarea {
   cursor: pointer;
 }
 
+/* ── Language toggle ── */
+.lang-toggle {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.25s, border-color 0.25s, transform 0.2s;
+}
+.lang-toggle:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
 .floating-cta {
   position: fixed;
   right: 24px;
@@ -1551,6 +1568,7 @@ html.js .reveal.visible :nth-child(4) { animation-delay: 300ms; }
   position: absolute;
   inset: 0;
   border-radius: inherit;
+  pointer-events: none;
   background: linear-gradient(
     120deg,
     transparent 30%,
@@ -1671,7 +1689,7 @@ html.js .reveal.visible :nth-child(4) { animation-delay: 300ms; }
 
 @keyframes clientMarquee {
   to {
-    transform: translateX(-50%);
+    transform: translateX(-33.333%);
   }
 }
 

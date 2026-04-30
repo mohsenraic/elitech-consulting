@@ -87,13 +87,14 @@
           <img class="brand-logo" src="assets/elitech-logo-white.png" alt="Logo ELITECH" width="260" height="68" />
         </a>
         <nav class="desktop-nav" aria-label="Navigation principale">
-          <a href="#services">Services</a>
-          <a href="#tarifs">Tarifs</a>
-          <a href="#methode">Méthode</a>
-          <a href="#preuves">Confiance</a>
-          <a href="#contact">Contact</a>
+          <a href="#services" data-i18n="nav.services">Services</a>
+          <a href="#tarifs" data-i18n="nav.tarifs">Tarifs</a>
+          <a href="#methode" data-i18n="nav.methode">Méthode</a>
+          <a href="#preuves" data-i18n="nav.confiance">Confiance</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
         </nav>
-        <a class="header-cta" href="#estimateur" role="button">Estimer mon projet</a>
+        <a class="header-cta" href="#estimateur" role="button" data-i18n="nav.cta">Estimer mon projet</a>
+        <button class="lang-toggle" type="button" data-lang-toggle aria-label="Switch to English">🇬🇧</button>
         <button class="menu-button" type="button" aria-label="Ouvrir le menu de navigation" aria-expanded="false" data-menu-button>
           <span></span>
           <span></span>
@@ -102,12 +103,13 @@
     </header>
 
     <nav class="mobile-nav" aria-label="Navigation mobile" data-mobile-nav aria-hidden="true">
-      <a href="#services">Services</a>
-      <a href="#tarifs">Tarifs</a>
-      <a href="#estimateur">Estimateur</a>
-      <a href="#methode">Méthode</a>
-      <a href="#preuves">Confiance</a>
-      <a href="#contact">Contact</a>
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#tarifs" data-i18n="nav.tarifs">Tarifs</a>
+      <a href="#estimateur" data-i18n="nav.estimateur">Estimateur</a>
+      <a href="#methode" data-i18n="nav.methode">Méthode</a>
+      <a href="#preuves" data-i18n="nav.confiance">Confiance</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+      <button class="lang-toggle mobile-lang" type="button" data-lang-toggle aria-label="Switch to English">🇬🇧</button>
     </nav>
 
     <main id="main-content">
@@ -116,16 +118,16 @@
         <img class="hero-image" src="assets/hero-tech.png" alt="Environnement digital moderne illustrant le développement web, mobile et IA" loading="eager" fetchpriority="high" />
         <div class="hero-overlay" aria-hidden="true"></div>
         <div class="hero-content reveal visible">
-          <p class="eyebrow">Agence digitale pour PME & entreprises ambitieuses</p>
-          <h1>Sites web, applications et solutions IA qui génèrent des résultats.</h1>
-          <p class="hero-copy">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Agence digitale pour PME & entreprises ambitieuses</p>
+          <h1 data-i18n="hero.title">Sites web, applications et solutions IA qui génèrent des résultats.</h1>
+          <p class="hero-copy" data-i18n="hero.copy">
             ELITECH conçoit des expériences digitales performantes — sites web,
             applications mobiles et outils IA — alliant design premium, rapidité et fiabilité technique.
             Un accompagnement direct par les fondateurs, de la stratégie au déploiement.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#estimateur">Estimer mon projet</a>
-            <a class="button secondary" href="#services">Découvrir nos expertises</a>
+            <a class="button primary" href="#estimateur" data-i18n="hero.cta1">Estimer mon projet</a>
+            <a class="button secondary" href="#services" data-i18n="hero.cta2">Découvrir nos expertises</a>
           </div>
           <div class="hero-metrics" aria-label="Nos engagements clés">
             <span><strong data-count="2">0</strong> fondateurs impliqués</span>
@@ -135,17 +137,17 @@
         </div>
         <aside class="hero-proof reveal visible" data-parallax aria-label="Stack technologique">
           <div class="proof-orbit" aria-hidden="true"></div>
-          <p>Expertise complète</p>
-          <strong>Web + Mobile + IA</strong>
-          <span>Design, développement, maintenance et automatisation réunis dans un seul accompagnement.</span>
+          <p data-i18n="hero.proof.label">Expertise complète</p>
+          <strong data-i18n="hero.proof.title">Web + Mobile + IA</strong>
+          <span data-i18n="hero.proof.desc">Design, développement, maintenance et automatisation réunis dans un seul accompagnement.</span>
         </aside>
       </section>
 
       <section class="section intro-band reveal" aria-label="Pourquoi choisir ELITECH">
-        <div class="section-kicker">Pourquoi ELITECH</div>
+        <div class="section-kicker" data-i18n="intro.kicker">Pourquoi ELITECH</div>
         <div class="intro-grid">
-          <h2>Une équipe resserrée, un niveau d'exigence exceptionnel.</h2>
-          <p>
+          <h2 data-i18n="intro.title">Une équipe resserrée, un niveau d'exigence exceptionnel.</h2>
+          <p data-i18n="intro.copy">
             Vous collaborez directement avec deux experts qui maîtrisent la technique,
             le design et la stratégie business. Pas de lourdeur administrative, pas de promesses vagues :
             des choix éclairés, des livrables soignés et une relation de travail transparente du début à la fin.
@@ -154,9 +156,18 @@
       </section>
 
       <section class="client-strip" aria-label="Entreprises qui nous ont fait confiance">
-        <p>Ils nous ont fait confiance</p>
+        <p data-i18n="clients.title">Ils nous ont fait confiance</p>
         <div class="client-marquee">
           <div class="client-track">
+            <span><img src="assets/clients/E.Leclerc_logo.svg.png" alt="E-Leclerc" loading="lazy" /><em>E-Leclerc</em></span>
+            <span><img src="assets/clients/Logo_Saur_(2022).svg.png" alt="SAUR" loading="lazy" /><em>SAUR</em></span>
+            <span><img src="assets/clients/CGI_logo.svg.png" alt="CGI" loading="lazy" /><em>CGI</em></span>
+            <span><img src="assets/clients/Logo-altares-positif-250-2.png" alt="Altares France" loading="lazy" /><em>Altares France</em></span>
+            <span><img src="assets/clients/unilever-3.svg" alt="Unilever" loading="lazy" /><em>Unilever</em></span>
+            <span><img src="assets/clients/logo-cfecgc-inova-dark.svg" alt="INOVA CFE-CGC" loading="lazy" /><em>INOVA CFE-CGC</em></span>
+            <span><img src="assets/clients/Fret_SNCF_2023.png" alt="SNCF Fret" loading="lazy" /><em>SNCF Fret</em></span>
+            <span><img src="assets/clients/iqera-italia-logo.png" alt="iQera" loading="lazy" /><em>iQera</em></span>
+            <span><img src="assets/clients/Neem_Logo_600.webp" alt="Neem" loading="lazy" /><em>Neem</em></span>
             <span><img src="assets/clients/E.Leclerc_logo.svg.png" alt="E-Leclerc" loading="lazy" /><em>E-Leclerc</em></span>
             <span><img src="assets/clients/Logo_Saur_(2022).svg.png" alt="SAUR" loading="lazy" /><em>SAUR</em></span>
             <span><img src="assets/clients/CGI_logo.svg.png" alt="CGI" loading="lazy" /><em>CGI</em></span>
@@ -182,29 +193,29 @@
 
       <section class="section showcase" aria-label="Nos réalisations et savoir-faire digital">
         <div class="section-heading reveal">
-          <p class="section-kicker">Nos réalisations</p>
-          <h2>Un rendu premium pour chaque point de contact digital.</h2>
+          <p class="section-kicker" data-i18n="showcase.kicker">Nos réalisations</p>
+          <h2 data-i18n="showcase.title">Un rendu premium pour chaque point de contact digital.</h2>
         </div>
         <div class="photo-grid">
           <article class="photo-card large reveal" data-parallax>
             <img src="assets/photo-web-app.png" alt="Interface web responsive et application mobile au design premium" loading="lazy" width="800" height="600" />
             <div>
-              <span>Sites web & applications</span>
-              <h3>Des expériences rapides, élégantes et optimisées pour la conversion.</h3>
+              <span data-i18n="showcase.card1.label">Sites web & applications</span>
+              <h3 data-i18n="showcase.card1.title">Des expériences rapides, élégantes et optimisées pour la conversion.</h3>
             </div>
           </article>
           <article class="photo-card reveal" data-parallax>
             <img src="assets/photo-ai.png" alt="Dashboard d'intelligence artificielle et automatisation de processus" loading="lazy" width="600" height="400" />
             <div>
-              <span>Intelligence artificielle</span>
-              <h3>Automatiser les tâches chronophages pour libérer vos équipes.</h3>
+              <span data-i18n="showcase.card2.label">Intelligence artificielle</span>
+              <h3 data-i18n="showcase.card2.title">Automatiser les tâches chronophages pour libérer vos équipes.</h3>
             </div>
           </article>
           <article class="photo-card reveal" data-parallax>
             <img src="assets/photo-monitoring.png" alt="Tableaux de bord de monitoring, sécurité et performance web" loading="lazy" width="600" height="400" />
             <div>
-              <span>Maintenance & monitoring</span>
-              <h3>Surveiller, sécuriser et optimiser en continu votre présence en ligne.</h3>
+              <span data-i18n="showcase.card3.label">Maintenance & monitoring</span>
+              <h3 data-i18n="showcase.card3.title">Surveiller, sécuriser et optimiser en continu votre présence en ligne.</h3>
             </div>
           </article>
         </div>
@@ -212,66 +223,66 @@
 
       <section class="section services" id="services" aria-label="Nos services et expertises digitales">
         <div class="section-heading reveal">
-          <p class="section-kicker">Nos expertises</p>
-          <h2>Tout ce qu'il faut pour créer, moderniser et pérenniser votre présence digitale.</h2>
+          <p class="section-kicker" data-i18n="services.kicker">Nos expertises</p>
+          <h2 data-i18n="services.title">Tout ce qu'il faut pour créer, moderniser et pérenniser votre présence digitale.</h2>
         </div>
         <div class="service-grid">
           <article class="service-card reveal">
             <span class="icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M4 5h16v10H4z"></path><path d="M9 19h6"></path><path d="M12 15v4"></path></svg>
             </span>
-            <h3>Sites web vitrine & corporate</h3>
-            <p>Interfaces modernes, rapides et responsives, conçues pour convertir vos visiteurs en prospects qualifiés et renforcer votre crédibilité.</p>
+            <h3 data-i18n="services.card1.title">Sites web vitrine & corporate</h3>
+            <p data-i18n="services.card1.desc">Interfaces modernes, rapides et responsives, conçues pour convertir vos visiteurs en prospects qualifiés et renforcer votre crédibilité.</p>
           </article>
           <article class="service-card reveal">
             <span class="icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"></rect><path d="M11 18h2"></path></svg>
             </span>
-            <h3>Applications web & mobile</h3>
-            <p>Applications métier, portails clients et dashboards sur-mesure, bâtis sur une architecture technique robuste et évolutive.</p>
+            <h3 data-i18n="services.card2.title">Applications web & mobile</h3>
+            <p data-i18n="services.card2.desc">Applications métier, portails clients et dashboards sur-mesure, bâtis sur une architecture technique robuste et évolutive.</p>
           </article>
           <article class="service-card reveal">
             <span class="icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M12 3v18"></path><path d="M4 8h16"></path><path d="M6 16h12"></path><circle cx="12" cy="12" r="3"></circle></svg>
             </span>
-            <h3>Solutions d'intelligence artificielle</h3>
-            <p>Automatisation des processus, assistants internes, analyse documentaire et intégrations IA pour un gain de productivité mesurable.</p>
+            <h3 data-i18n="services.card3.title">Solutions d'intelligence artificielle</h3>
+            <p data-i18n="services.card3.desc">Automatisation des processus, assistants internes, analyse documentaire et intégrations IA pour un gain de productivité mesurable.</p>
           </article>
           <article class="service-card reveal">
             <span class="icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="M12 5v14"></path><circle cx="12" cy="12" r="8"></circle></svg>
             </span>
-            <h3>Webmastering & maintenance</h3>
-            <p>Mises à jour régulières, sécurité renforcée, gestion de contenu et optimisation des performances pour un site toujours fiable.</p>
+            <h3 data-i18n="services.card4.title">Webmastering & maintenance</h3>
+            <p data-i18n="services.card4.desc">Mises à jour régulières, sécurité renforcée, gestion de contenu et optimisation des performances pour un site toujours fiable.</p>
           </article>
         </div>
       </section>
 
       <section class="section process" id="methode" aria-label="Notre méthodologie de travail">
         <div class="section-heading reveal">
-          <p class="section-kicker">Notre méthode</p>
-          <h2>Une démarche structurée, du cadrage stratégique à la mise en production.</h2>
+          <p class="section-kicker" data-i18n="process.kicker">Notre méthode</p>
+          <h2 data-i18n="process.title">Une démarche structurée, du cadrage stratégique à la mise en production.</h2>
         </div>
         <ol class="timeline" role="list">
           <li class="step reveal">
             <span aria-hidden="true">01</span>
-            <h3>Cadrage stratégique</h3>
-            <p>Analyse des objectifs, identification de la cible, définition des messages clés et priorisation des enjeux business.</p>
+            <h3 data-i18n="process.step1.title">Cadrage stratégique</h3>
+            <p data-i18n="process.step1.desc">Analyse des objectifs, identification de la cible, définition des messages clés et priorisation des enjeux business.</p>
           </li>
           <li class="step reveal">
             <span aria-hidden="true">02</span>
-            <h3>Design & prototypage</h3>
-            <p>Direction artistique élégante, maquettes interactives et validation visuelle avant le moindre développement.</p>
+            <h3 data-i18n="process.step2.title">Design & prototypage</h3>
+            <p data-i18n="process.step2.desc">Direction artistique élégante, maquettes interactives et validation visuelle avant le moindre développement.</p>
           </li>
           <li class="step reveal">
             <span aria-hidden="true">03</span>
-            <h3>Développement sur-mesure</h3>
-            <p>Code propre, responsive, performant et architecturé pour évoluer avec votre activité.</p>
+            <h3 data-i18n="process.step3.title">Développement sur-mesure</h3>
+            <p data-i18n="process.step3.desc">Code propre, responsive, performant et architecturé pour évoluer avec votre activité.</p>
           </li>
           <li class="step reveal">
             <span aria-hidden="true">04</span>
-            <h3>Lancement & accompagnement</h3>
-            <p>Tests rigoureux, mise en production, suivi analytique et améliorations continues post-lancement.</p>
+            <h3 data-i18n="process.step4.title">Lancement & accompagnement</h3>
+            <p data-i18n="process.step4.desc">Tests rigoureux, mise en production, suivi analytique et améliorations continues post-lancement.</p>
           </li>
         </ol>
       </section>
@@ -279,81 +290,81 @@
       <section class="section trust" id="preuves" aria-label="Nos engagements de confiance">
         <div class="trust-panel reveal">
           <div>
-            <p class="section-kicker">Engagements</p>
-            <h2>Une relation directe avec ceux qui conçoivent et réalisent votre projet.</h2>
+            <p class="section-kicker" data-i18n="trust.kicker">Engagements</p>
+            <h2 data-i18n="trust.title">Une relation directe avec ceux qui conçoivent et réalisent votre projet.</h2>
           </div>
           <div class="trust-list">
-            <p><strong>Transparence totale.</strong> Devis détaillé et compréhensible, périmètre clairement défini et communication fluide à chaque étape.</p>
-            <p><strong>Exigence qualité.</strong> Attention minutieuse au design, aux performances, au SEO technique et à la fiabilité de chaque livrable.</p>
-            <p><strong>Agilité & réactivité.</strong> Une équipe restreinte capable d'avancer rapidement sans jamais sacrifier la qualité des détails.</p>
+            <p data-i18n="trust.item1"><strong>Transparence totale.</strong> Devis détaillé et compréhensible, périmètre clairement défini et communication fluide à chaque étape.</p>
+            <p data-i18n="trust.item2"><strong>Exigence qualité.</strong> Attention minutieuse au design, aux performances, au SEO technique et à la fiabilité de chaque livrable.</p>
+            <p data-i18n="trust.item3"><strong>Agilité & réactivité.</strong> Une équipe restreinte capable d'avancer rapidement sans jamais sacrifier la qualité des détails.</p>
           </div>
         </div>
       </section>
 
       <section class="section pricing" id="tarifs" aria-label="Nos tarifs et formules">
         <div class="section-heading reveal">
-          <p class="section-kicker">Nos tarifs</p>
-          <h2>Des formules claires pour chaque ambition digitale.</h2>
+          <p class="section-kicker" data-i18n="pricing.kicker">Nos tarifs</p>
+          <h2 data-i18n="pricing.title">Des formules claires pour chaque ambition digitale.</h2>
         </div>
         <div class="pricing-grid">
           <article class="pricing-card reveal">
             <div class="pricing-card-header">
               <span class="pricing-emoji" aria-hidden="true">🚀</span>
-              <h3>Lancement rapide</h3>
-              <p class="pricing-tagline">Idéal pour startups & MVP</p>
+              <h3 data-i18n="pricing.card1.title">Lancement rapide</h3>
+              <p class="pricing-tagline" data-i18n="pricing.card1.tagline">Idéal pour startups & MVP</p>
             </div>
             <div class="pricing-card-body">
               <ul class="pricing-features">
-                <li>1 landing page haute conversion</li>
-                <li>Setup technique complet</li>
-                <li>Design responsive premium</li>
-                <li>Livraison rapide</li>
+                <li data-i18n="pricing.card1.f1">1 landing page haute conversion</li>
+                <li data-i18n="pricing.card1.f2">Setup technique complet</li>
+                <li data-i18n="pricing.card1.f3">Design responsive premium</li>
+                <li data-i18n="pricing.card1.f4">Livraison rapide</li>
               </ul>
             </div>
             <div class="pricing-card-footer">
-              <p class="pricing-price">À partir de <strong>1 500€</strong></p>
-              <a class="button primary pricing-cta" href="#estimateur">Obtenir un devis</a>
+              <p class="pricing-price"><span data-i18n="pricing.card1.price">À partir de</span> <strong>1 500€</strong></p>
+              <a class="button primary pricing-cta" href="#estimateur" data-i18n="pricing.cta">Obtenir un devis</a>
             </div>
           </article>
           <article class="pricing-card featured reveal">
-            <span class="pricing-badge">Le plus populaire</span>
+            <span class="pricing-badge" data-i18n="pricing.badge">Le plus populaire</span>
             <div class="pricing-card-header">
               <span class="pricing-emoji" aria-hidden="true">📈</span>
-              <h3>Produit digital</h3>
-              <p class="pricing-tagline">Site multi-pages ou application simple</p>
+              <h3 data-i18n="pricing.card2.title">Produit digital</h3>
+              <p class="pricing-tagline" data-i18n="pricing.card2.tagline">Site multi-pages ou application simple</p>
             </div>
             <div class="pricing-card-body">
               <ul class="pricing-features">
-                <li>Site multi-pages ou application web</li>
-                <li>UX optimisée pour la conversion</li>
-                <li>Tracking & analytics intégrés</li>
-                <li>Optimisation SEO technique</li>
-                <li>Support post-lancement inclus</li>
+                <li data-i18n="pricing.card2.f1">Site multi-pages ou application web</li>
+                <li data-i18n="pricing.card2.f2">UX optimisée pour la conversion</li>
+                <li data-i18n="pricing.card2.f3">Tracking & analytics intégrés</li>
+                <li data-i18n="pricing.card2.f4">Optimisation SEO technique</li>
+                <li data-i18n="pricing.card2.f5">Support post-lancement inclus</li>
               </ul>
             </div>
             <div class="pricing-card-footer">
-              <p class="pricing-price">À partir de <strong>4 000€</strong></p>
-              <a class="button primary pricing-cta" href="#estimateur">Obtenir un devis</a>
+              <p class="pricing-price"><span data-i18n="pricing.card2.price">À partir de</span> <strong>4 000€</strong></p>
+              <a class="button primary pricing-cta" href="#estimateur" data-i18n="pricing.cta">Obtenir un devis</a>
             </div>
           </article>
           <article class="pricing-card reveal">
             <div class="pricing-card-header">
               <span class="pricing-emoji" aria-hidden="true">🧠</span>
-              <h3>Solution sur mesure</h3>
-              <p class="pricing-tagline">Application métier & plateforme</p>
+              <h3 data-i18n="pricing.card3.title">Solution sur mesure</h3>
+              <p class="pricing-tagline" data-i18n="pricing.card3.tagline">Application métier & plateforme</p>
             </div>
             <div class="pricing-card-body">
               <ul class="pricing-features">
-                <li>Application métier / plateforme</li>
-                <li>Automatisation & intégration IA</li>
-                <li>Architecture scalable</li>
-                <li>Accompagnement & consulting</li>
-                <li>Maintenance & évolutions</li>
+                <li data-i18n="pricing.card3.f1">Application métier / plateforme</li>
+                <li data-i18n="pricing.card3.f2">Automatisation & intégration IA</li>
+                <li data-i18n="pricing.card3.f3">Architecture scalable</li>
+                <li data-i18n="pricing.card3.f4">Accompagnement & consulting</li>
+                <li data-i18n="pricing.card3.f5">Maintenance & évolutions</li>
               </ul>
             </div>
             <div class="pricing-card-footer">
-              <p class="pricing-price">À partir de <strong>8 000€</strong></p>
-              <a class="button primary pricing-cta" href="#estimateur">Obtenir un devis</a>
+              <p class="pricing-price"><span data-i18n="pricing.card3.price">À partir de</span> <strong>8 000€</strong></p>
+              <a class="button primary pricing-cta" href="#estimateur" data-i18n="pricing.cta">Obtenir un devis</a>
             </div>
           </article>
         </div>
@@ -361,8 +372,8 @@
 
       <section class="section estimator" id="estimateur" aria-label="Estimateur de coût de projet">
         <div class="section-heading reveal">
-          <p class="section-kicker">Estimateur de coût</p>
-          <h2>Estimez le budget de votre projet en 2 minutes.</h2>
+          <p class="section-kicker" data-i18n="est.kicker">Estimateur de coût</p>
+          <h2 data-i18n="est.title">Estimez le budget de votre projet en 2 minutes.</h2>
         </div>
         <div class="estimator-wrapper reveal">
           <form class="estimator-form" data-estimator-form>
@@ -372,8 +383,8 @@
 
             <div class="estimator-progress" aria-hidden="true">
               <div class="estimator-progress-top">
-                <span>Estimation de projet</span>
-                <span>Étape <strong data-est-current-step>1</strong>/6</span>
+                <span data-i18n="est.progress">Estimation de projet</span>
+                <span><span data-i18n="est.step">Étape</span> <strong data-est-current-step>1</strong>/6</span>
               </div>
               <div class="estimator-progress-track">
                 <span data-est-progress-bar></span>
@@ -381,82 +392,82 @@
             </div>
 
             <div class="est-step active" data-est-step="1">
-              <h4>Quel type de projet envisagez-vous ?</h4>
+              <h4 data-i18n="est.s1.title">Quel type de projet envisagez-vous ?</h4>
               <div class="est-options" data-est-field="type_projet">
-                <label class="est-option"><input type="radio" name="est_type" value="site-vitrine" required /><span>🌐</span>Site vitrine</label>
-                <label class="est-option"><input type="radio" name="est_type" value="site-ecommerce" /><span>🛒</span>Site e-commerce</label>
-                <label class="est-option"><input type="radio" name="est_type" value="application-web" /><span>💻</span>Application web</label>
-                <label class="est-option"><input type="radio" name="est_type" value="application-mobile" /><span>📱</span>Application mobile</label>
-                <label class="est-option"><input type="radio" name="est_type" value="plateforme" /><span>🏗️</span>Plateforme / SaaS</label>
-                <label class="est-option"><input type="radio" name="est_type" value="ia-automatisation" /><span>🤖</span>IA & automatisation</label>
+                <label class="est-option" data-i18n="est.s1.o1"><input type="radio" name="est_type" value="site-vitrine" required /><span>🌐</span>Site vitrine</label>
+                <label class="est-option" data-i18n="est.s1.o2"><input type="radio" name="est_type" value="site-ecommerce" /><span>🛒</span>Site e-commerce</label>
+                <label class="est-option" data-i18n="est.s1.o3"><input type="radio" name="est_type" value="application-web" /><span>💻</span>Application web</label>
+                <label class="est-option" data-i18n="est.s1.o4"><input type="radio" name="est_type" value="application-mobile" /><span>📱</span>Application mobile</label>
+                <label class="est-option" data-i18n="est.s1.o5"><input type="radio" name="est_type" value="plateforme" /><span>🏗️</span>Plateforme / SaaS</label>
+                <label class="est-option" data-i18n="est.s1.o6"><input type="radio" name="est_type" value="ia-automatisation" /><span>🤖</span>IA & automatisation</label>
               </div>
             </div>
 
             <div class="est-step" data-est-step="2" hidden>
-              <h4>Combien de pages ou fonctionnalités ?</h4>
+              <h4 data-i18n="est.s2.title">Combien de pages ou fonctionnalités ?</h4>
               <div class="est-options" data-est-field="volume">
-                <label class="est-option"><input type="radio" name="est_volume" value="1-5" required /><span>📄</span>1 à 5 pages</label>
-                <label class="est-option"><input type="radio" name="est_volume" value="6-15" /><span>📑</span>6 à 15 pages</label>
-                <label class="est-option"><input type="radio" name="est_volume" value="16-plus" /><span>📚</span>16+ pages / app complexe</label>
+                <label class="est-option" data-i18n="est.s2.o1"><input type="radio" name="est_volume" value="1-5" required /><span>📄</span>1 à 5 pages</label>
+                <label class="est-option" data-i18n="est.s2.o2"><input type="radio" name="est_volume" value="6-15" /><span>📑</span>6 à 15 pages</label>
+                <label class="est-option" data-i18n="est.s2.o3"><input type="radio" name="est_volume" value="16-plus" /><span>📚</span>16+ pages / app complexe</label>
               </div>
             </div>
 
             <div class="est-step" data-est-step="3" hidden>
-              <h4>Quel niveau de design souhaitez-vous ?</h4>
+              <h4 data-i18n="est.s3.title">Quel niveau de design souhaitez-vous ?</h4>
               <div class="est-options" data-est-field="design">
-                <label class="est-option"><input type="radio" name="est_design" value="basique" required /><span>🎨</span>Basique — template adapté</label>
-                <label class="est-option"><input type="radio" name="est_design" value="premium" /><span>✨</span>Premium — design soigné</label>
-                <label class="est-option"><input type="radio" name="est_design" value="sur-mesure" /><span>💎</span>Sur mesure — 100% unique</label>
+                <label class="est-option" data-i18n="est.s3.o1"><input type="radio" name="est_design" value="basique" required /><span>🎨</span>Basique — template adapté</label>
+                <label class="est-option" data-i18n="est.s3.o2"><input type="radio" name="est_design" value="premium" /><span>✨</span>Premium — design soigné</label>
+                <label class="est-option" data-i18n="est.s3.o3"><input type="radio" name="est_design" value="sur-mesure" /><span>💎</span>Sur mesure — 100% unique</label>
               </div>
             </div>
 
             <div class="est-step" data-est-step="4" hidden>
-              <h4>Quel est votre délai ?</h4>
+              <h4 data-i18n="est.s4.title">Quel est votre délai ?</h4>
               <div class="est-options" data-est-field="delai">
-                <label class="est-option"><input type="radio" name="est_delai" value="urgent" required /><span>⚡</span>Urgent — moins de 1 mois</label>
-                <label class="est-option"><input type="radio" name="est_delai" value="normal" /><span>📅</span>Normal — 1 à 3 mois</label>
-                <label class="est-option"><input type="radio" name="est_delai" value="flexible" /><span>🕰️</span>Flexible — plus de 3 mois</label>
+                <label class="est-option" data-i18n="est.s4.o1"><input type="radio" name="est_delai" value="urgent" required /><span>⚡</span>Urgent — moins de 1 mois</label>
+                <label class="est-option" data-i18n="est.s4.o2"><input type="radio" name="est_delai" value="normal" /><span>📅</span>Normal — 1 à 3 mois</label>
+                <label class="est-option" data-i18n="est.s4.o3"><input type="radio" name="est_delai" value="flexible" /><span>🕰️</span>Flexible — plus de 3 mois</label>
               </div>
             </div>
 
             <div class="est-step" data-est-step="5" hidden>
-              <h4>Options supplémentaires</h4>
+              <h4 data-i18n="est.s5.title">Options supplémentaires</h4>
               <div class="est-options checkboxes" data-est-field="options">
-                <label class="est-option"><input type="checkbox" name="est_options" value="seo" /><span>🔍</span>SEO & référencement</label>
-                <label class="est-option"><input type="checkbox" name="est_options" value="ia" /><span>🤖</span>Intelligence artificielle</label>
-                <label class="est-option"><input type="checkbox" name="est_options" value="automatisation" /><span>⚙️</span>Automatisation</label>
-                <label class="est-option"><input type="checkbox" name="est_options" value="maintenance" /><span>🛡️</span>Maintenance & support</label>
-                <label class="est-option"><input type="checkbox" name="est_options" value="multilingue" /><span>🌍</span>Site multilingue</label>
-                <label class="est-option"><input type="checkbox" name="est_options" value="analytics" /><span>📊</span>Analytics & tracking</label>
+                <label class="est-option" data-i18n="est.s5.o1"><input type="checkbox" name="est_options" value="seo" /><span>🔍</span>SEO & référencement</label>
+                <label class="est-option" data-i18n="est.s5.o2"><input type="checkbox" name="est_options" value="ia" /><span>🤖</span>Intelligence artificielle</label>
+                <label class="est-option" data-i18n="est.s5.o3"><input type="checkbox" name="est_options" value="automatisation" /><span>⚙️</span>Automatisation</label>
+                <label class="est-option" data-i18n="est.s5.o4"><input type="checkbox" name="est_options" value="maintenance" /><span>🛡️</span>Maintenance & support</label>
+                <label class="est-option" data-i18n="est.s5.o5"><input type="checkbox" name="est_options" value="multilingue" /><span>🌍</span>Site multilingue</label>
+                <label class="est-option" data-i18n="est.s5.o6"><input type="checkbox" name="est_options" value="analytics" /><span>📊</span>Analytics & tracking</label>
               </div>
             </div>
 
             <div class="est-step" data-est-step="6" hidden>
-              <h4>Vos coordonnées pour recevoir l'estimation</h4>
+              <h4 data-i18n="est.s6.title">Vos coordonnées pour recevoir l'estimation</h4>
               <div class="est-contact-fields">
-                <label>Nom complet<input type="text" name="est_nom" placeholder="Votre nom et prénom" required autocomplete="name" /></label>
-                <label>Adresse email<input type="email" name="est_email" placeholder="vous@entreprise.com" required autocomplete="email" /></label>
-                <label>Téléphone<input type="tel" name="est_telephone" placeholder="+33 6 00 00 00 00" required autocomplete="tel" /></label>
+                <label><span data-i18n="est.s6.name">Nom complet</span><input type="text" name="est_nom" placeholder="Votre nom et prénom" data-i18n="est.s6.namePh" data-i18n-attr="placeholder" required autocomplete="name" /></label>
+                <label><span data-i18n="est.s6.email">Adresse email</span><input type="email" name="est_email" placeholder="vous@entreprise.com" required autocomplete="email" /></label>
+                <label><span data-i18n="est.s6.phone">Téléphone</span><input type="tel" name="est_telephone" placeholder="+33 6 00 00 00 00" required autocomplete="tel" /></label>
               </div>
             </div>
 
             <div class="est-step est-result" data-est-step="result" hidden>
               <div class="est-result-card">
                 <span class="est-result-icon" aria-hidden="true">💰</span>
-                <h4>Estimation de votre projet</h4>
+                <h4 data-i18n="est.result.title">Estimation de votre projet</h4>
                 <p class="est-result-range" data-est-result-range></p>
-                <p class="est-result-note">Basé sur vos réponses. Ce montant est indicatif et peut varier selon les spécificités de votre projet.</p>
+                <p class="est-result-note" data-i18n="est.result.note">Basé sur vos réponses. Ce montant est indicatif et peut varier selon les spécificités de votre projet.</p>
                 <div class="est-result-message">
-                  <p>📩 Nous vous contacterons sous <strong>48 heures</strong> pour mieux comprendre vos besoins et vous fournir un devis détaillé.</p>
+                  <p data-i18n="est.result.msg">📩 Nous vous contacterons sous <strong>48 heures</strong> pour mieux comprendre vos besoins et vous fournir un devis détaillé.</p>
                 </div>
-                <button class="button primary form-button est-reset-btn" type="button" data-est-reset>Nouvelle estimation</button>
+                <button class="button primary form-button est-reset-btn" type="button" data-est-reset data-i18n="est.result.reset">Nouvelle estimation</button>
               </div>
             </div>
 
             <div class="est-actions">
-              <button class="button secondary form-button" type="button" data-est-prev hidden>Précédent</button>
-              <button class="button primary form-button" type="button" data-est-next>Suivant</button>
-              <button class="button primary form-button" type="submit" data-est-submit hidden>Voir mon estimation</button>
+              <button class="button secondary form-button" type="button" data-est-prev hidden data-i18n="est.prev">Précédent</button>
+              <button class="button primary form-button" type="button" data-est-next data-i18n="est.next">Suivant</button>
+              <button class="button primary form-button" type="submit" data-est-submit hidden data-i18n="est.submit">Voir mon estimation</button>
             </div>
             <p class="form-status" data-est-status aria-live="polite"></p>
           </form>
@@ -465,9 +476,9 @@
 
       <section class="section contact" id="contact" aria-label="Formulaire de contact">
         <div class="contact-copy reveal">
-          <p class="section-kicker">Contactez-nous</p>
-          <h2>Parlons de votre prochain projet digital.</h2>
-          <p>
+          <p class="section-kicker" data-i18n="contact.kicker">Contactez-nous</p>
+          <h2 data-i18n="contact.title">Parlons de votre prochain projet digital.</h2>
+          <p data-i18n="contact.copy">
             Remplissez ce formulaire guidé en 3 étapes :
             d'abord les informations sur votre projet, ensuite vos besoins précis,
             puis vos coordonnées de contact.
@@ -487,8 +498,8 @@
 
           <div class="form-progress" aria-hidden="true">
             <div class="form-progress-top">
-              <span>Formulaire projet</span>
-              <span>Étape <strong data-current-step>1</strong>/3</span>
+              <span data-i18n="contact.formLabel">Formulaire projet</span>
+              <span><span data-i18n="contact.stepLabel">Étape</span> <strong data-current-step>1</strong>/3</span>
             </div>
             <div class="form-progress-track">
               <span data-progress-bar></span>
@@ -497,86 +508,86 @@
 
           <div class="form-step active" data-form-step="1">
             <label>
-              Type de projet
+              <span data-i18n="contact.s1.type">Type de projet</span>
               <select name="type_projet" required>
-                <option value="">Sélectionner votre besoin</option>
-                <option value="site-web">Création de site web</option>
-                <option value="application">Application web ou mobile</option>
-                <option value="webmastering">Webmastering & maintenance</option>
-                <option value="ia">Solution d'intelligence artificielle</option>
-                <option value="refonte">Refonte de site existant</option>
-                <option value="audit">Audit technique & SEO</option>
-                <option value="autre">Autre demande</option>
+                <option value="" data-i18n="contact.s1.typePh">Sélectionner votre besoin</option>
+                <option value="site-web" data-i18n="contact.s1.t1">Création de site web</option>
+                <option value="application" data-i18n="contact.s1.t2">Application web ou mobile</option>
+                <option value="webmastering" data-i18n="contact.s1.t3">Webmastering & maintenance</option>
+                <option value="ia" data-i18n="contact.s1.t4">Solution d'intelligence artificielle</option>
+                <option value="refonte" data-i18n="contact.s1.t5">Refonte de site existant</option>
+                <option value="audit" data-i18n="contact.s1.t6">Audit technique & SEO</option>
+                <option value="autre" data-i18n="contact.s1.t7">Autre demande</option>
               </select>
             </label>
             <label>
-              Budget estimatif
+              <span data-i18n="contact.s1.budget">Budget estimatif</span>
               <select name="budget" required>
-                <option value="">Choisir une tranche</option>
-                <option value="moins-5000">Moins de 5 000€</option>
-                <option value="5000-15000">5 000€ à 15 000€</option>
-                <option value="15000-40000">15 000€ à 40 000€</option>
-                <option value="plus-40000">Plus de 40 000€</option>
-                <option value="a-definir">À définir ensemble</option>
+                <option value="" data-i18n="contact.s1.budgetPh">Choisir une tranche</option>
+                <option value="moins-5000" data-i18n="contact.s1.b1">Moins de 5 000€</option>
+                <option value="5000-15000" data-i18n="contact.s1.b2">5 000€ à 15 000€</option>
+                <option value="15000-40000" data-i18n="contact.s1.b3">15 000€ à 40 000€</option>
+                <option value="plus-40000" data-i18n="contact.s1.b4">Plus de 40 000€</option>
+                <option value="a-definir" data-i18n="contact.s1.b5">À définir ensemble</option>
               </select>
             </label>
             <label>
-              Délai souhaité
+              <span data-i18n="contact.s1.deadline">Délai souhaité</span>
               <select name="delai" required>
-                <option value="">Sélectionner un délai</option>
-                <option value="urgent">Urgent (moins de 1 mois)</option>
-                <option value="1-3-mois">1 à 3 mois</option>
-                <option value="3-6-mois">3 à 6 mois</option>
-                <option value="6-plus">Plus de 6 mois</option>
+                <option value="" data-i18n="contact.s1.deadlinePh">Sélectionner un délai</option>
+                <option value="urgent" data-i18n="contact.s1.d1">Urgent (moins de 1 mois)</option>
+                <option value="1-3-mois" data-i18n="contact.s1.d2">1 à 3 mois</option>
+                <option value="3-6-mois" data-i18n="contact.s1.d3">3 à 6 mois</option>
+                <option value="6-plus" data-i18n="contact.s1.d4">Plus de 6 mois</option>
               </select>
             </label>
           </div>
 
           <div class="form-step" data-form-step="2" hidden>
             <label>
-              Objectif principal
+              <span data-i18n="contact.s2.goal">Objectif principal</span>
               <select name="objectif" required>
-                <option value="">Sélectionner un objectif</option>
-                <option value="generer-leads">Générer plus de prospects</option>
-                <option value="vendre">Vendre en ligne</option>
-                <option value="automatiser">Automatiser des tâches</option>
-                <option value="moderniser">Moderniser l'image de marque</option>
-                <option value="optimiser">Améliorer la performance technique</option>
+                <option value="" data-i18n="contact.s2.goalPh">Sélectionner un objectif</option>
+                <option value="generer-leads" data-i18n="contact.s2.g1">Générer plus de prospects</option>
+                <option value="vendre" data-i18n="contact.s2.g2">Vendre en ligne</option>
+                <option value="automatiser" data-i18n="contact.s2.g3">Automatiser des tâches</option>
+                <option value="moderniser" data-i18n="contact.s2.g4">Moderniser l'image de marque</option>
+                <option value="optimiser" data-i18n="contact.s2.g5">Améliorer la performance technique</option>
               </select>
             </label>
             <label>
-              Fonctionnalités attendues
-              <textarea name="fonctionnalites" rows="4" placeholder="Ex: espace client, réservation, paiement, dashboard, chatbot IA..." required></textarea>
+              <span data-i18n="contact.s2.features">Fonctionnalités attendues</span>
+              <textarea name="fonctionnalites" rows="4" placeholder="Ex: espace client, réservation, paiement, dashboard, chatbot IA..." data-i18n="contact.s2.featuresPh" data-i18n-attr="placeholder" required></textarea>
             </label>
             <label>
-              Détails du projet
-              <textarea name="message" rows="5" placeholder="Décrivez votre contexte, vos contraintes et ce que vous attendez d'ELITECH." required></textarea>
+              <span data-i18n="contact.s2.details">Détails du projet</span>
+              <textarea name="message" rows="5" placeholder="Décrivez votre contexte, vos contraintes et ce que vous attendez d'ELITECH." data-i18n="contact.s2.detailsPh" data-i18n-attr="placeholder" required></textarea>
             </label>
           </div>
 
           <div class="form-step" data-form-step="3" hidden>
             <label>
-              Nom complet
-              <input type="text" name="nom" placeholder="Votre nom et prénom" required autocomplete="name" />
+              <span data-i18n="contact.s3.name">Nom complet</span>
+              <input type="text" name="nom" placeholder="Votre nom et prénom" data-i18n="contact.s3.namePh" data-i18n-attr="placeholder" required autocomplete="name" />
             </label>
             <label>
-              Société
-              <input type="text" name="societe" placeholder="Nom de votre entreprise" autocomplete="organization" />
+              <span data-i18n="contact.s3.company">Société</span>
+              <input type="text" name="societe" placeholder="Nom de votre entreprise" data-i18n="contact.s3.companyPh" data-i18n-attr="placeholder" autocomplete="organization" />
             </label>
             <label>
-              Adresse email
+              <span data-i18n="contact.s3.email">Adresse email</span>
               <input type="email" name="email" placeholder="vous@entreprise.com" required autocomplete="email" />
             </label>
             <label>
-              Téléphone
+              <span data-i18n="contact.s3.phone">Téléphone</span>
               <input type="tel" name="telephone" placeholder="+33 6 00 00 00 00" autocomplete="tel" />
             </label>
           </div>
 
           <div class="form-actions">
-            <button class="button secondary form-button" type="button" data-step-prev hidden>Précédent</button>
-            <button class="button primary form-button" type="button" data-step-next>Suivant</button>
-            <button class="button primary form-button" type="submit" data-step-submit hidden>Envoyer ma demande</button>
+            <button class="button secondary form-button" type="button" data-step-prev hidden data-i18n="contact.prev">Précédent</button>
+            <button class="button primary form-button" type="button" data-step-next data-i18n="contact.next">Suivant</button>
+            <button class="button primary form-button" type="submit" data-step-submit hidden data-i18n="contact.submit">Envoyer ma demande</button>
           </div>
           <p class="form-status" data-form-status aria-live="polite"></p>
         </form>
@@ -585,35 +596,36 @@
 
     <a class="floating-cta" href="#estimateur" aria-label="Estimer mon projet" data-floating-cta>
       <span class="floating-cta-icon" aria-hidden="true">💬</span>
-      <span class="floating-cta-text">Estimer mon projet</span>
+      <span class="floating-cta-text" data-i18n="floating.cta">Estimer mon projet</span>
     </a>
 
     <footer class="footer" role="contentinfo">
       <div class="footer-top">
         <div class="footer-brand">
           <img class="footer-logo" src="assets/elitech-logo-white.png" alt="Logo ELITECH" width="220" height="56" loading="lazy" />
-          <p>Agence digitale spécialisée en création de sites web, applications mobiles, IA et webmastering.</p>
+          <p data-i18n="footer.desc">Agence digitale spécialisée en création de sites web, applications mobiles, IA et webmastering.</p>
         </div>
         <nav class="footer-nav" aria-label="Navigation pied de page">
-          <h4>Navigation</h4>
-          <a href="#accueil">Accueil</a>
-          <a href="#services">Services</a>
-          <a href="#tarifs">Tarifs</a>
-          <a href="#estimateur">Estimateur</a>
-          <a href="#methode">Méthode</a>
-          <a href="#preuves">Confiance</a>
-          <a href="#contact">Contact</a>
+          <h4 data-i18n="footer.navTitle">Navigation</h4>
+          <a href="#accueil" data-i18n="nav.home">Accueil</a>
+          <a href="#services" data-i18n="nav.services">Services</a>
+          <a href="#tarifs" data-i18n="nav.pricing">Tarifs</a>
+          <a href="#estimateur" data-i18n="nav.estimator">Estimateur</a>
+          <a href="#methode" data-i18n="nav.method">Méthode</a>
+          <a href="#preuves" data-i18n="nav.trust">Confiance</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
         </nav>
         <div class="footer-contact-info">
-          <h4>Contact</h4>
+          <h4 data-i18n="footer.contactTitle">Contact</h4>
           <a href="mailto:contact@weareelitech.com">contact@weareelitech.com</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 ELITECH. Tous droits réservés.</p>
+        <p data-i18n="footer.copy">&copy; 2026 ELITECH. Tous droits réservés.</p>
       </div>
     </footer>
 
+    <script src="i18n.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
