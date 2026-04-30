@@ -24,13 +24,22 @@ const setScrollProgress = () => {
   scrollProgress.style.width = `${progress}%`;
 };
 
+const floatingCta = document.querySelector("[data-floating-cta]");
+
+const setFloatingCta = () => {
+  if (!floatingCta) return;
+  floatingCta.classList.toggle("visible", window.scrollY > 500);
+};
+
 setHeaderState();
 setScrollProgress();
+setFloatingCta();
 window.addEventListener(
   "scroll",
   () => {
     setHeaderState();
     setScrollProgress();
+    setFloatingCta();
   },
   { passive: true },
 );
@@ -58,16 +67,99 @@ clientLogos.forEach((logo) => {
   });
 });
 
+const cursorDot = document.querySelector(".cursor-dot");
+
 if (glow) {
+  const trailPool = [];
+  const TRAIL_COUNT = 8;
+
+  for (let i = 0; i < TRAIL_COUNT; i++) {
+    const dot = document.createElement("div");
+    dot.classList.add("cursor-trail");
+    dot.setAttribute("aria-hidden", "true");
+    document.body.appendChild(dot);
+    trailPool.push({ el: dot, x: 0, y: 0 });
+  }
+
+  let mouseX = 0;
+  let mouseY = 0;
+
   window.addEventListener(
     "pointermove",
     (event) => {
+      mouseX = event.clientX;
+      mouseY = event.clientY;
+
       glow.style.opacity = "1";
-      glow.style.left = `${event.clientX}px`;
-      glow.style.top = `${event.clientY}px`;
+      glow.style.left = `${mouseX}px`;
+      glow.style.top = `${mouseY}px`;
+
+      if (cursorDot) {
+        cursorDot.classList.add("active");
+        cursorDot.style.left = `${mouseX}px`;
+        cursorDot.style.top = `${mouseY}px`;
+      }
     },
     { passive: true },
   );
+
+  /* Smooth trail following cursor */
+  const animateTrail = () => {
+    let prevX = mouseX;
+    let prevY = mouseY;
+
+    trailPool.forEach((dot, i) => {
+      const speed = 0.3 - i * 0.025;
+      dot.x += (prevX - dot.x) * speed;
+      dot.y += (prevY - dot.y) * speed;
+      dot.el.style.left = `${dot.x}px`;
+      dot.el.style.top = `${dot.y}px`;
+      dot.el.style.opacity = String(0.5 - i * 0.06);
+      dot.el.style.width = `${Math.max(2, 5 - i * 0.4)}px`;
+      dot.el.style.height = dot.el.style.width;
+      prevX = dot.x;
+      prevY = dot.y;
+    });
+
+    if (!reduceMotion.matches) requestAnimationFrame(animateTrail);
+  };
+
+  if (!reduceMotion.matches) requestAnimationFrame(animateTrail);
+
+  /* Cursor dot grows when hovering interactive elements */
+  const hoverTargets = document.querySelectorAll(
+    "a, button, .service-card, .pricing-card, .photo-card, .est-option",
+  );
+
+  hoverTargets.forEach((el) => {
+    el.addEventListener("pointerenter", () =>
+      cursorDot?.classList.add("hovering"),
+    );
+    el.addEventListener("pointerleave", () =>
+      cursorDot?.classList.remove("hovering"),
+    );
+  });
+}
+
+/* Magnetic tilt on cards */
+if (!reduceMotion.matches) {
+  const tiltCards = document.querySelectorAll(".service-card, .pricing-card");
+
+  tiltCards.forEach((card) => {
+    card.addEventListener("pointermove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      const tiltX = y * -8;
+      const tiltY = x * 8;
+
+      card.style.transform = `perspective(600px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-4px)`;
+    });
+
+    card.addEventListener("pointerleave", () => {
+      card.style.transform = "";
+    });
+  });
 }
 
 const animateCounter = (element) => {
@@ -330,4 +422,228 @@ if (multiStepForm) {
   });
 
   updateFormStep();
+}
+
+/* ── Interactive Cost Estimator ── */
+
+const estForm = document.querySelector("[data-estimator-form]");
+
+if (estForm) {
+  const estSteps = Array.from(estForm.querySelectorAll("[data-est-step]"));
+  const questionSteps = estSteps.filter((s) => s.dataset.estStep !== "result");
+  const resultStep = estForm.querySelector('[data-est-step="result"]');
+  const prevBtn = estForm.querySelector("[data-est-prev]");
+  const nextBtn = estForm.querySelector("[data-est-next]");
+  const submitBtn = estForm.querySelector("[data-est-submit]");
+  const stepText = estForm.querySelector("[data-est-current-step]");
+  const progressBar = estForm.querySelector("[data-est-progress-bar]");
+  const statusEl = estForm.querySelector("[data-est-status]");
+  const resultRange = estForm.querySelector("[data-est-result-range]");
+  const actionsEl = estForm.querySelector(".est-actions");
+  let estCurrent = 0;
+  const totalQuestions = questionSteps.length;
+
+  /* ─ Pricing logic (easily editable) ─ */
+  const PRICING = {
+    type: {
+      "site-vitrine": 1200,
+      "site-ecommerce": 3000,
+      "application-web": 4000,
+      "application-mobile": 5000,
+      plateforme: 7000,
+      "ia-automatisation": 6000,
+    },
+    volume: { "1-5": 0, "6-15": 1500, "16-plus": 4000 },
+    design: { basique: 0, premium: 1500, "sur-mesure": 3500 },
+    delai: { urgent: 1500, normal: 0, flexible: -500 },
+    options: {
+      seo: 800,
+      ia: 2500,
+      automatisation: 2000,
+      maintenance: 1200,
+      multilingue: 1000,
+      analytics: 600,
+    },
+  };
+
+  const calcEstimate = () => {
+    const type =
+      estForm.querySelector('input[name="est_type"]:checked')?.value || "";
+    const volume =
+      estForm.querySelector('input[name="est_volume"]:checked')?.value || "";
+    const design =
+      estForm.querySelector('input[name="est_design"]:checked')?.value || "";
+    const delai =
+      estForm.querySelector('input[name="est_delai"]:checked')?.value || "";
+    const opts = Array.from(
+      estForm.querySelectorAll('input[name="est_options"]:checked'),
+    ).map((c) => c.value);
+
+    let base =
+      (PRICING.type[type] || 0) +
+      (PRICING.volume[volume] || 0) +
+      (PRICING.design[design] || 0) +
+      (PRICING.delai[delai] || 0);
+    opts.forEach((o) => (base += PRICING.options[o] || 0));
+
+    const low = Math.max(1000, Math.round((base * 0.85) / 100) * 100);
+    const high = Math.round((base * 1.25) / 100) * 100;
+
+    return `${low.toLocaleString("fr-FR")}€ – ${high.toLocaleString("fr-FR")}€`;
+  };
+
+  const updateEstStep = (showResult) => {
+    estSteps.forEach((s) => {
+      s.hidden = true;
+      s.classList.remove("active");
+    });
+
+    if (showResult) {
+      resultStep.hidden = false;
+      resultStep.classList.add("active");
+      actionsEl.hidden = true;
+      if (stepText) stepText.textContent = "✓";
+      if (progressBar) progressBar.style.width = "100%";
+      return;
+    }
+
+    const active = questionSteps[estCurrent];
+    if (active) {
+      active.hidden = false;
+      active.classList.add("active");
+    }
+
+    actionsEl.hidden = false;
+
+    if (stepText) stepText.textContent = String(estCurrent + 1);
+    if (progressBar)
+      progressBar.style.width = `${((estCurrent + 1) / totalQuestions) * 100}%`;
+
+    if (prevBtn) prevBtn.hidden = estCurrent === 0;
+    if (nextBtn) nextBtn.hidden = estCurrent === totalQuestions - 1;
+    if (submitBtn) submitBtn.hidden = estCurrent !== totalQuestions - 1;
+  };
+
+  const validateEstStep = () => {
+    const step = questionSteps[estCurrent];
+    const radios = step.querySelectorAll('input[type="radio"]');
+    const texts = step.querySelectorAll(
+      'input[type="text"], input[type="email"], input[type="tel"]',
+    );
+
+    if (radios.length) {
+      const name = radios[0].name;
+      if (!estForm.querySelector(`input[name="${name}"]:checked`)) {
+        radios[0].setCustomValidity("Veuillez sélectionner une option.");
+        radios[0].reportValidity();
+        radios[0].setCustomValidity("");
+        return false;
+      }
+    }
+
+    for (const f of texts) {
+      if (!f.checkValidity()) {
+        f.reportValidity();
+        return false;
+      }
+    }
+
+    return true;
+  };
+
+  nextBtn?.addEventListener("click", () => {
+    if (!validateEstStep()) return;
+    estCurrent = Math.min(estCurrent + 1, totalQuestions - 1);
+    updateEstStep(false);
+  });
+
+  prevBtn?.addEventListener("click", () => {
+    estCurrent = Math.max(estCurrent - 1, 0);
+    updateEstStep(false);
+  });
+
+  estForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (!validateEstStep()) return;
+
+    if (window.location.protocol === "file:") {
+      if (statusEl) {
+        statusEl.textContent =
+          "FormSubmit nécessite un serveur web. Ouvrez le site via un serveur local, puis réessayez.";
+        statusEl.classList.add("error");
+      }
+      return;
+    }
+
+    if (statusEl) {
+      statusEl.textContent = "Envoi en cours...";
+      statusEl.classList.remove("success", "error");
+    }
+    if (submitBtn) submitBtn.disabled = true;
+
+    const estimate = calcEstimate();
+
+    try {
+      const formData = new FormData(estForm);
+      formData.append("estimation", estimate);
+
+      const response = await fetch(
+        "https://formsubmit.co/ajax/contact@weareelitech.com",
+        {
+          method: "POST",
+          body: formData,
+          headers: { Accept: "application/json" },
+        },
+      );
+
+      const result = await response.json().catch(() => null);
+
+      if (
+        !response.ok ||
+        result?.success === "false" ||
+        result?.success === false
+      ) {
+        throw new Error(result?.message || "Submission failed");
+      }
+
+      if (resultRange) resultRange.textContent = estimate;
+      if (statusEl) {
+        statusEl.textContent = "";
+        statusEl.classList.remove("error");
+      }
+
+      updateEstStep(true);
+    } catch (error) {
+      const msg = error instanceof Error ? error.message : "";
+      if (statusEl) {
+        statusEl.textContent = /web server/i.test(msg)
+          ? "FormSubmit nécessite un serveur web."
+          : "Une erreur est survenue. Merci de réessayer ou d'écrire à contact@weareelitech.com.";
+        statusEl.classList.add("error");
+      }
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+    }
+  });
+
+  const resetEstimator = () => {
+    estForm.reset();
+    estCurrent = 0;
+    if (statusEl) {
+      statusEl.textContent = "";
+      statusEl.classList.remove("success", "error");
+    }
+    updateEstStep(false);
+  };
+
+  const resetBtn = estForm.querySelector("[data-est-reset]");
+  resetBtn?.addEventListener("click", resetEstimator);
+
+  document.querySelectorAll(".pricing-cta").forEach((cta) => {
+    cta.addEventListener("click", () => {
+      resetEstimator();
+    });
+  });
+
+  updateEstStep(false);
 }

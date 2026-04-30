@@ -65,7 +65,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -73,6 +73,7 @@
   <body>
     <a class="skip-link" href="#main-content">Aller au contenu principal</a>
     <div class="cursor-glow" aria-hidden="true"></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
     <div class="scroll-progress" data-scroll-progress aria-hidden="true" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
 
     <header class="site-header" data-header role="banner">
@@ -87,11 +88,12 @@
         </a>
         <nav class="desktop-nav" aria-label="Navigation principale">
           <a href="#services">Services</a>
+          <a href="#tarifs">Tarifs</a>
           <a href="#methode">Méthode</a>
           <a href="#preuves">Confiance</a>
           <a href="#contact">Contact</a>
         </nav>
-        <a class="header-cta" href="#contact" role="button">Démarrer un projet</a>
+        <a class="header-cta" href="#estimateur" role="button">Estimer mon projet</a>
         <button class="menu-button" type="button" aria-label="Ouvrir le menu de navigation" aria-expanded="false" data-menu-button>
           <span></span>
           <span></span>
@@ -101,6 +103,8 @@
 
     <nav class="mobile-nav" aria-label="Navigation mobile" data-mobile-nav aria-hidden="true">
       <a href="#services">Services</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#estimateur">Estimateur</a>
       <a href="#methode">Méthode</a>
       <a href="#preuves">Confiance</a>
       <a href="#contact">Contact</a>
@@ -120,7 +124,7 @@
             Un accompagnement direct par les fondateurs, de la stratégie au déploiement.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#contact">Discuter de votre projet</a>
+            <a class="button primary" href="#estimateur">Estimer mon projet</a>
             <a class="button secondary" href="#services">Découvrir nos expertises</a>
           </div>
           <div class="hero-metrics" aria-label="Nos engagements clés">
@@ -286,6 +290,179 @@
         </div>
       </section>
 
+      <section class="section pricing" id="tarifs" aria-label="Nos tarifs et formules">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Nos tarifs</p>
+          <h2>Des formules claires pour chaque ambition digitale.</h2>
+        </div>
+        <div class="pricing-grid">
+          <article class="pricing-card reveal">
+            <div class="pricing-card-header">
+              <span class="pricing-emoji" aria-hidden="true">🚀</span>
+              <h3>Lancement rapide</h3>
+              <p class="pricing-tagline">Idéal pour startups & MVP</p>
+            </div>
+            <div class="pricing-card-body">
+              <ul class="pricing-features">
+                <li>1 landing page haute conversion</li>
+                <li>Setup technique complet</li>
+                <li>Design responsive premium</li>
+                <li>Livraison rapide</li>
+              </ul>
+            </div>
+            <div class="pricing-card-footer">
+              <p class="pricing-price">À partir de <strong>1 500€</strong></p>
+              <a class="button primary pricing-cta" href="#estimateur">Obtenir un devis</a>
+            </div>
+          </article>
+          <article class="pricing-card featured reveal">
+            <span class="pricing-badge">Le plus populaire</span>
+            <div class="pricing-card-header">
+              <span class="pricing-emoji" aria-hidden="true">📈</span>
+              <h3>Produit digital</h3>
+              <p class="pricing-tagline">Site multi-pages ou application simple</p>
+            </div>
+            <div class="pricing-card-body">
+              <ul class="pricing-features">
+                <li>Site multi-pages ou application web</li>
+                <li>UX optimisée pour la conversion</li>
+                <li>Tracking & analytics intégrés</li>
+                <li>Optimisation SEO technique</li>
+                <li>Support post-lancement inclus</li>
+              </ul>
+            </div>
+            <div class="pricing-card-footer">
+              <p class="pricing-price">À partir de <strong>4 000€</strong></p>
+              <a class="button primary pricing-cta" href="#estimateur">Obtenir un devis</a>
+            </div>
+          </article>
+          <article class="pricing-card reveal">
+            <div class="pricing-card-header">
+              <span class="pricing-emoji" aria-hidden="true">🧠</span>
+              <h3>Solution sur mesure</h3>
+              <p class="pricing-tagline">Application métier & plateforme</p>
+            </div>
+            <div class="pricing-card-body">
+              <ul class="pricing-features">
+                <li>Application métier / plateforme</li>
+                <li>Automatisation & intégration IA</li>
+                <li>Architecture scalable</li>
+                <li>Accompagnement & consulting</li>
+                <li>Maintenance & évolutions</li>
+              </ul>
+            </div>
+            <div class="pricing-card-footer">
+              <p class="pricing-price">À partir de <strong>8 000€</strong></p>
+              <a class="button primary pricing-cta" href="#estimateur">Obtenir un devis</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section estimator" id="estimateur" aria-label="Estimateur de coût de projet">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Estimateur de coût</p>
+          <h2>Estimez le budget de votre projet en 2 minutes.</h2>
+        </div>
+        <div class="estimator-wrapper reveal">
+          <form class="estimator-form" data-estimator-form>
+            <input type="hidden" name="_subject" value="Nouvelle estimation depuis weareelitech.com" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hidden-field" aria-hidden="true" />
+
+            <div class="estimator-progress" aria-hidden="true">
+              <div class="estimator-progress-top">
+                <span>Estimation de projet</span>
+                <span>Étape <strong data-est-current-step>1</strong>/6</span>
+              </div>
+              <div class="estimator-progress-track">
+                <span data-est-progress-bar></span>
+              </div>
+            </div>
+
+            <div class="est-step active" data-est-step="1">
+              <h4>Quel type de projet envisagez-vous ?</h4>
+              <div class="est-options" data-est-field="type_projet">
+                <label class="est-option"><input type="radio" name="est_type" value="site-vitrine" required /><span>🌐</span>Site vitrine</label>
+                <label class="est-option"><input type="radio" name="est_type" value="site-ecommerce" /><span>🛒</span>Site e-commerce</label>
+                <label class="est-option"><input type="radio" name="est_type" value="application-web" /><span>💻</span>Application web</label>
+                <label class="est-option"><input type="radio" name="est_type" value="application-mobile" /><span>📱</span>Application mobile</label>
+                <label class="est-option"><input type="radio" name="est_type" value="plateforme" /><span>🏗️</span>Plateforme / SaaS</label>
+                <label class="est-option"><input type="radio" name="est_type" value="ia-automatisation" /><span>🤖</span>IA & automatisation</label>
+              </div>
+            </div>
+
+            <div class="est-step" data-est-step="2" hidden>
+              <h4>Combien de pages ou fonctionnalités ?</h4>
+              <div class="est-options" data-est-field="volume">
+                <label class="est-option"><input type="radio" name="est_volume" value="1-5" required /><span>📄</span>1 à 5 pages</label>
+                <label class="est-option"><input type="radio" name="est_volume" value="6-15" /><span>📑</span>6 à 15 pages</label>
+                <label class="est-option"><input type="radio" name="est_volume" value="16-plus" /><span>📚</span>16+ pages / app complexe</label>
+              </div>
+            </div>
+
+            <div class="est-step" data-est-step="3" hidden>
+              <h4>Quel niveau de design souhaitez-vous ?</h4>
+              <div class="est-options" data-est-field="design">
+                <label class="est-option"><input type="radio" name="est_design" value="basique" required /><span>🎨</span>Basique — template adapté</label>
+                <label class="est-option"><input type="radio" name="est_design" value="premium" /><span>✨</span>Premium — design soigné</label>
+                <label class="est-option"><input type="radio" name="est_design" value="sur-mesure" /><span>💎</span>Sur mesure — 100% unique</label>
+              </div>
+            </div>
+
+            <div class="est-step" data-est-step="4" hidden>
+              <h4>Quel est votre délai ?</h4>
+              <div class="est-options" data-est-field="delai">
+                <label class="est-option"><input type="radio" name="est_delai" value="urgent" required /><span>⚡</span>Urgent — moins de 1 mois</label>
+                <label class="est-option"><input type="radio" name="est_delai" value="normal" /><span>📅</span>Normal — 1 à 3 mois</label>
+                <label class="est-option"><input type="radio" name="est_delai" value="flexible" /><span>🕰️</span>Flexible — plus de 3 mois</label>
+              </div>
+            </div>
+
+            <div class="est-step" data-est-step="5" hidden>
+              <h4>Options supplémentaires</h4>
+              <div class="est-options checkboxes" data-est-field="options">
+                <label class="est-option"><input type="checkbox" name="est_options" value="seo" /><span>🔍</span>SEO & référencement</label>
+                <label class="est-option"><input type="checkbox" name="est_options" value="ia" /><span>🤖</span>Intelligence artificielle</label>
+                <label class="est-option"><input type="checkbox" name="est_options" value="automatisation" /><span>⚙️</span>Automatisation</label>
+                <label class="est-option"><input type="checkbox" name="est_options" value="maintenance" /><span>🛡️</span>Maintenance & support</label>
+                <label class="est-option"><input type="checkbox" name="est_options" value="multilingue" /><span>🌍</span>Site multilingue</label>
+                <label class="est-option"><input type="checkbox" name="est_options" value="analytics" /><span>📊</span>Analytics & tracking</label>
+              </div>
+            </div>
+
+            <div class="est-step" data-est-step="6" hidden>
+              <h4>Vos coordonnées pour recevoir l'estimation</h4>
+              <div class="est-contact-fields">
+                <label>Nom complet<input type="text" name="est_nom" placeholder="Votre nom et prénom" required autocomplete="name" /></label>
+                <label>Adresse email<input type="email" name="est_email" placeholder="vous@entreprise.com" required autocomplete="email" /></label>
+                <label>Téléphone<input type="tel" name="est_telephone" placeholder="+33 6 00 00 00 00" required autocomplete="tel" /></label>
+              </div>
+            </div>
+
+            <div class="est-step est-result" data-est-step="result" hidden>
+              <div class="est-result-card">
+                <span class="est-result-icon" aria-hidden="true">💰</span>
+                <h4>Estimation de votre projet</h4>
+                <p class="est-result-range" data-est-result-range></p>
+                <p class="est-result-note">Basé sur vos réponses. Ce montant est indicatif et peut varier selon les spécificités de votre projet.</p>
+                <div class="est-result-message">
+                  <p>📩 Nous vous contacterons sous <strong>48 heures</strong> pour mieux comprendre vos besoins et vous fournir un devis détaillé.</p>
+                </div>
+                <button class="button primary form-button est-reset-btn" type="button" data-est-reset>Nouvelle estimation</button>
+              </div>
+            </div>
+
+            <div class="est-actions">
+              <button class="button secondary form-button" type="button" data-est-prev hidden>Précédent</button>
+              <button class="button primary form-button" type="button" data-est-next>Suivant</button>
+              <button class="button primary form-button" type="submit" data-est-submit hidden>Voir mon estimation</button>
+            </div>
+            <p class="form-status" data-est-status aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
       <section class="section contact" id="contact" aria-label="Formulaire de contact">
         <div class="contact-copy reveal">
           <p class="section-kicker">Contactez-nous</p>
@@ -406,6 +583,11 @@
       </section>
     </main>
 
+    <a class="floating-cta" href="#estimateur" aria-label="Estimer mon projet" data-floating-cta>
+      <span class="floating-cta-icon" aria-hidden="true">💬</span>
+      <span class="floating-cta-text">Estimer mon projet</span>
+    </a>
+
     <footer class="footer" role="contentinfo">
       <div class="footer-top">
         <div class="footer-brand">
@@ -416,6 +598,8 @@
           <h4>Navigation</h4>
           <a href="#accueil">Accueil</a>
           <a href="#services">Services</a>
+          <a href="#tarifs">Tarifs</a>
+          <a href="#estimateur">Estimateur</a>
           <a href="#methode">Méthode</a>
           <a href="#preuves">Confiance</a>
           <a href="#contact">Contact</a>
