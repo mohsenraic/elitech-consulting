@@ -171,7 +171,7 @@ textarea {
   width: 100%;
   min-height: 58px;
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: 1fr auto auto auto auto;
   align-items: center;
   gap: 18px;
   padding: 10px 16px 8px;
@@ -1694,6 +1694,12 @@ html.js .reveal.visible :nth-child(4) { animation-delay: 300ms; }
 }
 
 @media (max-width: 980px) {
+  .cursor-dot,
+  .cursor-trail,
+  .cursor-glow {
+    display: none !important;
+  }
+
   .site-header {
     padding: 8px 10px;
   }
@@ -1719,14 +1725,23 @@ html.js .reveal.visible :nth-child(4) { animation-delay: 300ms; }
   }
 
   .header-menu-row {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr auto auto;
     min-height: 60px;
     padding: 8px 10px 6px;
+    gap: 10px;
+  }
+
+  .header-menu-row > .lang-toggle {
+    display: inline-flex;
   }
 
   .menu-button {
     display: block;
     justify-self: end;
+  }
+
+  .mobile-nav .mobile-lang {
+    display: none;
   }
 
   .mobile-nav.open {
